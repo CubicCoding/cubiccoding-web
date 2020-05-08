@@ -1,1 +1,27 @@
-<p>voucher works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card cc-card-auth my-5">                
+                <div class="card-body">
+                    <span class="fa-stack fa-4x cc-voucher-shield">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-shield fa-stack-1x fa-inverse"></i>
+                      </span>
+                    <h5 class="card-title text-center">Ingresa el voucher id que recibiste por correo.</h5>
+                    <form class="cc-form-auth">
+                        <div class="form-label-group">
+                            <input type="text" id="voucherId" class="form-control" placeholder="Voucher" required
+                                autofocus>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Validar</button>
+                        <!-- TODO show only if credentials are incorrect -->
+                        <div *ngIf="true" class="alert alert-danger" role="alert">
+                            Voucher invalido.
+                        </div>
+                    </form>
+                    <a class="fa-stack fa-3x cc-voucher-back" [routerLink]="['/sign-in']"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
