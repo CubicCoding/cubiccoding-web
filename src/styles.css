@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+}
+
+#page-content {
+    flex: 1 0 auto;
+}
+
+.cc-blue-background {
+    background-color: #2f88a7;
+}
+
+.btn-primary {
+    background-color: #2f88a7 !important;
+    border-color: #2f88a7 !important;
+}
+
+.cc-rounded-button-label {
+    display: block;
+    font-size: 0.9rem !important;
+}
