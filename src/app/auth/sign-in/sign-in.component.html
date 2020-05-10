@@ -1,38 +1,47 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card cc-card-signin my-5">
+            <div class="card cc-card-auth my-5">
                 <picture>
                     <img src="assets/images/CubicCoding1x.png" class="img-fluid" alt="CubicCoding">
-                </picture>                
+                </picture>
                 <div class="card-body">
                     <h5 class="card-title text-center">Iniciar Sesión</h5>
-                    <form class="cc-form-signin">
+                    <form class="cc-form-auth" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <div class="form-label-group">
-                            <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" required
-                                autofocus>
+                            <input type="text" id="username" formControlName="username" class="form-control"
+                                placeholder="Usuario" required autofocus>
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                            </div>
                         </div>
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña"
-                                required>
+                            <input type="password" id="password" formControlName="password" class="form-control"
+                                placeholder="Contraseña" required>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
-                        <!-- TODO show only if credentials are incorrect -->
+                        <!-- TODO show/hide upon server response -->
                         <div *ngIf="false" class="alert alert-danger" role="alert">
                             Usuario o contraseña incorrectos.
-                        </div>                                                                    
+                        </div>
                     </form>
 
                     <div class="row">
                         <div class="col-6">
-                            <button id="voucherButton" class="button cc-rounded-button"><span class="fa fa-shield fa-lg" aria-hidden="true"></span></button>
+                            <button id="voucherButton" class="button cc-rounded-button"
+                                [routerLink]="['/voucher']"><span class="fa fa-shield fa-lg"
+                                    aria-hidden="true"></span></button>
                             <label class="cc-rounded-button-label" for="voucherButton">Usa tu Voucher</label>
                         </div>
                         <div class="col-6">
-                            <button id="infoButton" class="button cc-rounded-button" type="password"><span class="fa fa-info-circle fa-lg" aria-hidden="true"></span></button>
-                            <label class="cc-rounded-button-label" for="infoButton">Información</label>    
+                            <button id="infoButton" class="button cc-rounded-button" [routerLink]="['/info']"><span
+                                    class="fa fa-info-circle fa-lg" aria-hidden="true"></span></button>
+                            <label class="cc-rounded-button-label" for="infoButton">Información</label>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

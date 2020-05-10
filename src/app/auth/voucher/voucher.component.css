@@ -1,0 +1,13 @@
+.cc-voucher-shield {
+    color: #2f88a7;
+}
+
+.cc-voucher-back {
+    height: auto;
+    color: #2f88a7;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #2f88a7;
+}

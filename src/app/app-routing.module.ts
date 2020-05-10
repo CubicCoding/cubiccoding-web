@@ -5,10 +5,13 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { VoucherComponent } from './auth/voucher/voucher.component';
 
-const routes: Routes = [
+const routes: Routes = [  
   {path: 'sign-in', component: SignInComponent},
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'voucher', component: VoucherComponent}
+  {path: 'voucher', component: VoucherComponent},
+  
+  //TODO change this to scoreboard dashboard, which will redirect to sign-in if not loggedin
+  { path: '**', redirectTo: 'sign-in' }
 ];
 
 @NgModule({
