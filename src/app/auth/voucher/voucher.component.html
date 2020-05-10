@@ -1,25 +1,28 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card cc-card-auth my-5">                
+            <div class="card cc-card-auth my-5">
                 <div class="card-body">
                     <span class="fa-stack fa-4x cc-voucher-shield">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-shield fa-stack-1x fa-inverse"></i>
-                      </span>
+                    </span>
                     <h5 class="card-title text-center">Ingresa el voucher id que recibiste por correo.</h5>
-                    <form class="cc-form-auth">
+                    <form [formGroup]="voucherForm" (ngSubmit)="onSubmit()" class="cc-form-auth">
                         <div class="form-label-group">
-                            <input type="text" id="voucherId" class="form-control" placeholder="Voucher" required
-                                autofocus>
+                            <input type="text" id="voucherUuid" class="form-control" placeholder="Voucher"
+                                formControlName="voucherUuid" required autofocus minlength="5">
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Validar</button>
-                        <!-- TODO show only if credentials are incorrect -->
-                        <div *ngIf="true" class="alert alert-danger" role="alert">
-                            Voucher invalido.
+                        <div *ngIf="submitted && f.voucherUuid.errors" class="alert alert-danger" role="alert">
+                            <div *ngIf="f.voucherUuid.errors.required">Voucher is required</div>
+                            <div *ngIf="f.voucherUuid.errors.minlength">At least 5 characters</div>
                         </div>
+                        <button [disabled]="voucherForm.invalid || loading" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            {{ loading ? 'Validando...' : 'Validar' }}</button>
                     </form>
-                    <a class="fa-stack fa-3x cc-voucher-back" [routerLink]="['/sign-in']"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    <a class="fa-stack fa-3x cc-voucher-back" [routerLink]="['account/sign-in']"><i
+                            class="fa fa-arrow-left" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
