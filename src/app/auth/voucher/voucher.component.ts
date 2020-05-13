@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@app/auth/auth.service';
-import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-voucher',
@@ -13,6 +12,7 @@ export class VoucherComponent implements OnInit {
   voucherForm: FormGroup;
   loading = false;
   submitted = false;
+  error: string;
 
   constructor(
     private authService: AuthService,
@@ -31,7 +31,7 @@ export class VoucherComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
+    this.error = '';
     // stop here if form is invalid
     if (this.voucherForm.invalid) {
       return;
@@ -41,16 +41,21 @@ export class VoucherComponent implements OnInit {
 
     this.loading = true;
     this.authService.getVoucher(voucherUuid)
-    .pipe(first())
     .subscribe(
-      data => {
-      localStorage.setItem('email', data.email);
+      voucher => {
       this.router.navigate(['sign-up']);
       },
       errorInfo => {
         this.loading = false;
-        //TODO handle this with toast alert
-        alert(errorInfo.error.message);
+        this.error = this.handleVoucherError(errorInfo.status);
       });
+  }
+
+  private handleVoucherError(statusCode: number): string {
+    if(statusCode == 404) {
+      return "Voucher no encontrado";
+    } else if (statusCode == 410) {
+      return "Voucher invalido";
+    }
   }
 }

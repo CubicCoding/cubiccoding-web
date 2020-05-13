@@ -41,10 +41,15 @@ html, body {
 
 .form-label-group {
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .form-label-group input {
     height: auto;
     border-radius: 2rem;
+}
+
+.is-invalid {
+    color: red;
+    height:0px
 }
