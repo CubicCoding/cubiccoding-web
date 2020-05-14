@@ -30,7 +30,7 @@
                             <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
                                 placeholder="Confirmar Contraseña" required [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
                             <div *ngIf="submitted && f.confirmPassword.errors" class="is-invalid">
-                                <div *ngIf="f.confirmPassword.errors.required">Es necesario confirmar la contraseña</div>
+                                <div *ngIf="f.confirmPassword.errors.required">Confirma tu contraseña</div>
                                 <div *ngIf="f.confirmPassword.errors.mustMatch">Debe coincidir con la contraseña</div>
                             </div>
                         </div>

@@ -8,8 +8,8 @@ import { VoucherComponent } from './auth/voucher/voucher.component';
 import { SignUpGuard } from './auth/sign-up/sign-up.guard';
 
 const routes: Routes = [
-  {path: 'sign-in', component: SignInComponent},
-  {path: 'sign-up', component: SignUpComponent, canActivate: [SignUpGuard]},
+  {path: 'sign-in', component: SignInComponent, data: { animation: 'isLeft' }},
+  {path: 'sign-up', component: SignUpComponent, data: { animation: 'isRight' }, canActivate: [SignUpGuard]},
   {path: 'voucher', component: VoucherComponent},
   
   //TODO change this to scoreboard dashboard, which will redirect to sign-in if not loggedin

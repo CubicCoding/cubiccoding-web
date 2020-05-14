@@ -7,7 +7,9 @@
     </header> -->
     <div id="page-content">
         <div class="container text-center">
-            <router-outlet></router-outlet>
+            <div style="position: relative;" [@routeAnimations]="prepareRoute(outlet)" >
+                <router-outlet #outlet="outlet"></router-outlet>
+            </div>            
         </div>
     </div>
     <!-- <footer class="py-4 text-white-50 cc-blue-background">
