@@ -14,7 +14,11 @@ export class JwtInterceptor implements HttpInterceptor {
         const isLoggedIn = currentProfile && currentProfile.token;
         const hostApiUrl = request.url.startsWith(environment.hostApiUrl);
         if (isLoggedIn && hostApiUrl) {
-            //TODO add authorization header here before every request..
+            request = request.clone({
+                setHeaders: {
+                    Authorization: `Bearer ${currentProfile.token}`
+                }
+            });
         }
 
         return next.handle(request);

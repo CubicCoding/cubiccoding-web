@@ -3,6 +3,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTr
 import { Observable } from 'rxjs';
 
 import { AuthService } from '@app/auth/auth.service'
+import { CCRoutes } from '@app/_utils/routes';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class SignUpGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['voucher']);
+    this.router.navigate([CCRoutes.VOUCHER]);
     return false;
   }
 

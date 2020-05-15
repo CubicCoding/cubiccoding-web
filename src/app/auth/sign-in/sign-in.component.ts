@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { first } from 'rxjs/operators';
-
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@app/auth/auth.service';
+
+import { CCRoutes } from '@app/_utils/routes';
 
 @Component({
   selector: 'app-sign-in',
@@ -22,7 +22,9 @@ export class SignInComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router) { 
-      //TODO redirect to scoreboard dashboard if already logged in
+      if(this.authService.currentUserValue) {
+        this.router.navigate([CCRoutes.STUDENT_PROFILE]);
+      }
     }
 
   ngOnInit(): void {
