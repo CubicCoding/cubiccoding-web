@@ -14,6 +14,8 @@ import { VoucherComponent } from './auth/voucher/voucher.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { StudentProfileComponent } from './dashboard/components/student-profile/student-profile.component';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { StudentProfileComponent } from './dashboard/components/student-profile/
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
