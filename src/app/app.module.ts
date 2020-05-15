@@ -12,13 +12,15 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { VoucherComponent } from './auth/voucher/voucher.component';
 
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { StudentProfileComponent } from './dashboard/components/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    VoucherComponent
+    VoucherComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
