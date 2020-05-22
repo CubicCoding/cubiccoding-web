@@ -1,1 +1,48 @@
-<p>student-profile page goes here</p>
+<div class="profile-page">
+  <div class="row cc-header-logo">
+    <img src="assets/images/CubicCoding1x.png" class="img-fluid" alt="CubicCoding">
+  </div>
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row row-avatar">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile">
+              <div class="avatar">
+                <img cc-avatar-preloader="{{userProfile.avatarUrl || defaultUrl}}" alt="Circle Image"
+                  class="img-raised rounded-circle img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!loading" class="student-info">
+          <h3 class="title">{{primary.displayName}}</h3>
+          <h5>Software Developer</h5>
+          <div *ngIf="primary.currentScore != null" class="row">
+            <div class="col-6 left-student-info">Score :</div>
+            <div class="col-6 right-student-info">{{primary.currentScore + '/' + primary.totalOfferedScore}}</div>
+          </div>
+          <div class="row">
+            <div class="col-6 left-student-info">Curso :</div>
+            <div class="col-6 right-student-info">{{primary.courseName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-6 left-student-info">Fecha de inicio :</div>
+            <div class="col-6 right-student-info">{{primary.startDate | date:'shortDate'}}</div>
+          </div>
+          <div class="row">
+            <div class="col-6 left-student-info">Email :</div>
+            <div class="col-6 right-student-info d-inline-block text-truncate">{{primary.email}}</div>
+          </div>
+          <div class="row">
+            <div class="col-6 left-student-info">Usuario :</div>
+            <div class="col-6 right-student-info">{{primary.username}}</div>
+          </div>
+        </div>
+        <div *ngIf="loading" class="loading-student-info">
+          <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span> Cargando información...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

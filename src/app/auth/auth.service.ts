@@ -18,7 +18,7 @@ import { Constants } from '@app/_utils/constants';
 })
 export class AuthService {
   private currentUserSubject: BehaviorSubject<UserProfile>;
-  private userProfile: Observable<UserProfile>;
+  public userProfile: Observable<UserProfile>;
   private userEmail: string;
 
   constructor(private router: Router, private http: HttpClient) {
@@ -57,6 +57,7 @@ export class AuthService {
         let userProfile = response.body;
         userProfile.token = response.headers.get(Constants.AUTHORIZATION);
         localStorage.setItem(Constants.CURRENT_USER, JSON.stringify(userProfile));
+        localStorage.setItem("isRecentlyLoggedIn", "1");
         this.currentUserSubject.next(userProfile);
         return userProfile;
       }));

@@ -1,0 +1,85 @@
+.cc-header-logo {
+    display: block; 
+    padding: 10px;
+}
+
+.main-raised {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.main {
+    background: white;
+    position: relative;
+    z-index: 3;
+    margin-top: 15vh;
+}
+
+.profile-page {
+    background-color: #212429;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.profile-page .profile img {
+    max-width: 45%;
+    width: 100%;
+    margin: 0 auto;
+    -webkit-transform: translate3d(0,-50%,0);
+    -moz-transform: translate3d(0,-50%,0);
+    -o-transform: translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform: translate3d(0,-50%,0);
+    border: 5px solid rgba(255, 255, 255, 1);    
+}
+
+.img-raised {
+    box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+.title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    min-height: 32px;
+    color: #3C4858;
+    font-weight: 700;
+}
+
+.row-avatar {
+    max-height: 15vh;
+}
+
+.img-fluid {
+    max-height: 250px;
+}
+
+.student-info {
+    margin-bottom: 25px; 
+    display: block;
+    padding-bottom: 20px;
+}
+
+.left-student-info {
+    text-align: end; 
+    padding: 0;
+}
+
+.right-student-info {
+    text-align: start; 
+    padding: 0 0 0 5px; 
+    font-weight: 500;
+}
+
+.loading-student-info {
+    min-height: 150px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #3C4858;
+    font-weight: 500;
+    font-size: 1.5rem;
+}

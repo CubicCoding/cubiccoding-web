@@ -6,8 +6,8 @@ html, body {
     flex: 1 0 auto;
 }
 
-.cc-blue-background {
-    background-color: #2f88a7;
+.cc-nav-background {
+    background-color: #29475f;
 }
 
 .btn-primary {
@@ -52,4 +52,8 @@ html, body {
 .is-invalid {
     color: red;
     height:0px
+}
+
+.toast-top-center {
+    top: 12px !important;
 }

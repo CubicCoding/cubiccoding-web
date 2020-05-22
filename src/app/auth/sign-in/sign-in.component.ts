@@ -51,7 +51,7 @@ export class SignInComponent implements OnInit {
     this.loading = true;
     this.authService.signin(this.f.username.value, this.f.password.value)
       .subscribe(
-        data => {          
+        data => {
           this.router.navigate([this.returnUrl]);
         },
         errorInfo => {

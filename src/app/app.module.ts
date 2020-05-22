@@ -15,6 +15,7 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { StudentProfileComponent } from './dashboard/components/student-profile/student-profile.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ImagePreloaderDirective } from './shared/image-preloader.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ToastrModule } from 'ngx-toastr';
     SignInComponent,
     SignUpComponent,
     VoucherComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+    ImagePreloaderDirective
   ],
   imports: [
     BrowserModule,
