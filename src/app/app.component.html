@@ -1,5 +1,5 @@
 <body class="d-flex flex-column">
-    <header *ngIf="isUserLoggedIn">
+    <header @fade *ngIf="isUserLoggedIn">
         <!-- If this menu grows up, remove the navbar-expand class and implement burger menu or something  -->
         <nav class="navbar navbar-expand py-2 text-white-50 cc-nav-background">
             <a class="navbar-brand">
@@ -24,10 +24,10 @@
         <div class="container text-center">
             <div style="position: relative;" [@routeAnimations]="prepareRoute(outlet)" >
                 <router-outlet #outlet="outlet"></router-outlet>
-            </div>            
+            </div>
         </div>
     </div>
-    <footer *ngIf="isUserLoggedIn" class="py-2 text-white-50 cc-nav-background">
+    <footer @fade *ngIf="isUserLoggedIn" class="py-2 text-white-50 cc-nav-background">
         <div class="text-center">
           <a href="https://www.facebook.com/cubiccoding" class="btn btn-just-icon btn-link btn-facebook" target="_blank"><i class="fa fa-facebook"></i></a>
           <a href="https://twitter.com/CubicCoding" class="btn btn-just-icon btn-link btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a>

@@ -9,10 +9,13 @@ import { ScoreboardInfo } from '@app/dashboard/models/scoreboard-info';
 import { ScorePrimary } from '@app/dashboard/models/score-primary';
 import { CourseName } from '@app/dashboard/models/course-name';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-student-profile',
   templateUrl: './student-profile.component.html',
-  styleUrls: ['./student-profile.component.css']
+  styleUrls: ['./student-profile.component.css'],
+  animations: [fader]
 })
 export class StudentProfileComponent implements OnInit {
   primary: ScorePrimary;
@@ -30,15 +33,6 @@ export class StudentProfileComponent implements OnInit {
 
   ngOnInit(): void {
     let isRecentlyLoggedIn = localStorage.getItem("isRecentlyLoggedIn");
-
-    //Only display welcome toast when user is recently logged in
-    if (isRecentlyLoggedIn) {
-      localStorage.removeItem("isRecentlyLoggedIn");
-      let studentName = this.authService.currentUserValue.name;
-      this.toastr.success(`¡Bienvenido, ${studentName}!`, "CubicCoding", {
-        positionClass: 'toast-top-center'
-      });
-    }
 
     //Grab the scoreboard if subject doesn't provide it
     if(!this.scoreboardInfo) {

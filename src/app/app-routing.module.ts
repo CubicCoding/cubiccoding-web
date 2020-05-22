@@ -13,10 +13,10 @@ import { CCRoutes } from '@app/_utils/routes';
 
 const routes: Routes = [
   {path: '', redirectTo: CCRoutes.STUDENT_PROFILE, pathMatch: 'full'},
-  {path: CCRoutes.SIGN_IN, component: SignInComponent, data: { animation: 'isLeft' }},
-  {path: CCRoutes.SIGN_UP, component: SignUpComponent, data: { animation: 'isRight' }, canActivate: [SignUpGuard]},
-  {path: CCRoutes.VOUCHER, component: VoucherComponent},
-  {path: CCRoutes.STUDENT_PROFILE, component: StudentProfileComponent, canActivate: [AuthGuard]},
+  {path: CCRoutes.SIGN_IN, component: SignInComponent, data: { animation: 'signin' }},
+  {path: CCRoutes.SIGN_UP, component: SignUpComponent, data: { animation: 'signup' }, canActivate: [SignUpGuard]},
+  {path: CCRoutes.VOUCHER, component: VoucherComponent, data: { animation: 'voucher'}},
+  {path: CCRoutes.STUDENT_PROFILE, component: StudentProfileComponent, data: { animation: 'studentProfile' }, canActivate: [AuthGuard]},
 
   { path: '**', redirectTo: CCRoutes.SIGN_IN }
 ];

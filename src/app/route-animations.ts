@@ -8,12 +8,19 @@ import {
     animateChild
 } from '@angular/animations';
 
+export const fader = trigger('fade', [ 
+  transition('void => *', [
+    style({ opacity: 0 }), 
+    animate(1200, style({opacity: 1}))
+  ]) 
+]);
+
 export const slider =
   trigger('routeAnimations', [
-    transition('* => isLeft', slideTo('left') ),
-    transition('* => isRight', slideTo('right') ),
-    transition('isRight => *', slideTo('left') ),
-    transition('isLeft => *', slideTo('right') )
+    transition('signin => voucher', slideTo('right') ),
+    transition('voucher => signup', slideTo('right') ),
+    transition('signup => voucher', slideTo('left') ),
+    transition('voucher => signin', slideTo('left') )
   ]);
 
 function slideTo(direction) {
