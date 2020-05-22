@@ -7,15 +7,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignInComponent } from './auth/sign-in/sign-in.component';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
-import { VoucherComponent } from './auth/voucher/voucher.component';
+import { SignInComponent } from './auth/components/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
+import { VoucherComponent } from './auth/components/voucher/voucher.component';
 
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { StudentProfileComponent } from './dashboard/components/student-profile/student-profile.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { ImagePreloaderDirective } from './shared/image-preloader.directive';
+import { ContactComponent } from './auth/components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ImagePreloaderDirective } from './shared/image-preloader.directive';
     SignUpComponent,
     VoucherComponent,
     StudentProfileComponent,
-    ImagePreloaderDirective
+    ImagePreloaderDirective,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

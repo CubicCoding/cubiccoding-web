@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SignInComponent } from './auth/sign-in/sign-in.component';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
-import { VoucherComponent } from './auth/voucher/voucher.component';
+import { SignInComponent } from './auth/components/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
+import { VoucherComponent } from './auth/components/voucher/voucher.component';
 import { StudentProfileComponent } from '@app/dashboard/components/student-profile/student-profile.component';
 
-import { SignUpGuard } from './auth/sign-up/sign-up.guard';
+import { SignUpGuard } from './auth/components/sign-up/sign-up.guard';
 import { AuthGuard } from './auth/auth.guard';
 
 import { CCRoutes } from '@app/_utils/routes';
