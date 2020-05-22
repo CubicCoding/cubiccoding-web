@@ -20,7 +20,9 @@ export const slider =
     transition('signin => voucher', slideTo('right') ),
     transition('voucher => signup', slideTo('right') ),
     transition('signup => voucher', slideTo('left') ),
-    transition('voucher => signin', slideTo('left') )
+    transition('voucher => signin', slideTo('left') ),
+    transition('signin => contact', slideTo('right') ),
+    transition('contact => signin', slideTo('left'))
   ]);
 
 function slideTo(direction) {
