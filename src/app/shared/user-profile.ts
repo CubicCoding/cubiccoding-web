@@ -8,6 +8,6 @@ export class UserProfile {
     courseName: string;
     avatarUrl: string;
     classroomName: string;
-    createDate: Date;
+    createDate: any;
     token: string;
 }

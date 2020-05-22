@@ -12,20 +12,27 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { VoucherComponent } from './auth/voucher/voucher.component';
 
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { StudentProfileComponent } from './dashboard/components/student-profile/student-profile.component';
+
+import { ToastrModule } from 'ngx-toastr';
+import { ImagePreloaderDirective } from './shared/image-preloader.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    VoucherComponent
+    VoucherComponent,
+    StudentProfileComponent,
+    ImagePreloaderDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -4,20 +4,25 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { VoucherComponent } from './auth/voucher/voucher.component';
+import { StudentProfileComponent } from '@app/dashboard/components/student-profile/student-profile.component';
 
 import { SignUpGuard } from './auth/sign-up/sign-up.guard';
+import { AuthGuard } from './auth/auth.guard';
+
+import { CCRoutes } from '@app/_utils/routes';
 
 const routes: Routes = [
-  {path: 'sign-in', component: SignInComponent, data: { animation: 'isLeft' }},
-  {path: 'sign-up', component: SignUpComponent, data: { animation: 'isRight' }, canActivate: [SignUpGuard]},
-  {path: 'voucher', component: VoucherComponent},
-  
-  //TODO change this to scoreboard dashboard, which will redirect to sign-in if not loggedin
-  { path: '**', redirectTo: 'sign-in' }
+  {path: '', redirectTo: CCRoutes.STUDENT_PROFILE, pathMatch: 'full'},
+  {path: CCRoutes.SIGN_IN, component: SignInComponent, data: { animation: 'isLeft' }},
+  {path: CCRoutes.SIGN_UP, component: SignUpComponent, data: { animation: 'isRight' }, canActivate: [SignUpGuard]},
+  {path: CCRoutes.VOUCHER, component: VoucherComponent},
+  {path: CCRoutes.STUDENT_PROFILE, component: StudentProfileComponent, canActivate: [AuthGuard]},
+
+  { path: '**', redirectTo: CCRoutes.SIGN_IN }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

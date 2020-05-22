@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@app/auth/auth.service';
 
+import { CCRoutes } from '@app/_utils/routes';
+
 @Component({
   selector: 'app-voucher',
   templateUrl: './voucher.component.html',
@@ -18,7 +20,11 @@ export class VoucherComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) { 
+      if(this.authService.currentUserValue) {
+        this.router.navigate([CCRoutes.STUDENT_PROFILE])
+      }
+    }
 
   ngOnInit(): void {
     this.voucherForm = this.formBuilder.group({
@@ -43,7 +49,7 @@ export class VoucherComponent implements OnInit {
     this.authService.getVoucher(voucherUuid)
     .subscribe(
       voucher => {
-      this.router.navigate(['sign-up']);
+      this.router.navigate([CCRoutes.SIGN_UP]);
       },
       errorInfo => {
         this.loading = false;

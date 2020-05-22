@@ -6,6 +6,8 @@ import { AuthService } from '@app/auth/auth.service';
 import { MustMatch } from '@app/_utils/must-match.validator';
 import { User } from '@app/auth/models/user';
 
+import { CCRoutes } from '@app/_utils/routes';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -21,7 +23,11 @@ export class SignUpComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) {
+      if(this.authService.currentUserValue) {
+        this.router.navigate([CCRoutes.STUDENT_PROFILE])
+      }
+     }
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
@@ -51,7 +57,7 @@ export class SignUpComponent implements OnInit {
     this.authService.signup(user)
       .subscribe(
         data => {
-          this.router.navigate(['sign-in'])
+          this.performLogin(user);
         },
         errorInfo => {
           this.loading = false;
@@ -65,6 +71,18 @@ export class SignUpComponent implements OnInit {
     } else if (statusCode == 410) {
       return "Este correo ya esta asociado a una cuenta.";
     }
+  }
+
+  private performLogin(user) {
+    this.authService.signin(user.username, user.password)
+      .subscribe(
+        data => {          
+          this.router.navigate([CCRoutes.STUDENT_PROFILE]);
+        },
+        errorInfo => {
+          //if for some reason login fails, redirect user to sign-in route
+          this.router.navigate([CCRoutes.SIGN_IN]);
+        });
   }
 
 }
