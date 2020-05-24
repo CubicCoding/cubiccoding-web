@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  hostApiUrl: 'https://cubiccoding-api.herokuapp.com'
 };

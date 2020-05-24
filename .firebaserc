@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cubiccoding"
+  },
+  "targets": {
+    "cubiccoding": {
+      "hosting": {
+        "cubiccoding-web": [
+          "cubiccoding"
+        ]
+      }
+    }
+  }
+}

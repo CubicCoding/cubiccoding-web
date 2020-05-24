@@ -123,8 +123,13 @@
               "devServerTarget": "cubiccoding-web:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cubiccoding-web"
 }
