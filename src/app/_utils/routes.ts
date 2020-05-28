@@ -8,5 +8,6 @@ export abstract class CCRoutes {
 
     //Dashboard
     static readonly STUDENT_PROFILE = 'dashboard/student-profile';
+    static readonly SCOREBOARD = 'dashboard/scoreboard';
 
 }

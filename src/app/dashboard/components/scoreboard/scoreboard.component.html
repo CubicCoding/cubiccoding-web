@@ -1,0 +1,77 @@
+<div class="row scoreboard-error">
+    <div *ngIf="loading">
+        <span *ngIf="loading" class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+        <h5>Cargando información...</h5>
+    </div>
+    <div *ngIf="error">
+        <div class="alert alert-danger" role="alert">
+            {{error}}
+        </div>
+    </div>
+</div>
+<div *ngIf="!secondaries && !loading && !error" class="scoreboard-no-info">
+    <h2>¡Bienvenido al scoreboard, {{userProfile.name}}!</h2>
+    <h4>Aquí podrás encontrar información como ranking de tu grupo, preguntas y retos que has contestado a lo largo de
+        tu carrera como CubicCoder.</h4>
+    <h5>Muy pronto tu instructor iniciara torneos en los que podrás participar, ¡vuelve pronto!</h5>
+</div>
+<div *ngIf="secondaries" class="secondaries-container">
+    <div class="row">
+        <div class="col-12 margin-bottom-10 d-flex">
+            <div class="col-6 auto-margin">
+                <span class="text-truncated tournament-info">Torneo actual: <b>{{tournamentInfo.tournamentName}}</b></span>
+            </div>
+            <div class="col-6 auto-margin">
+                <button class="btn btn-primary">Pregunta Rápida</button>
+            </div>            
+        </div>        
+    </div>
+    <div *ngFor="let secondary of secondaries">
+        <div *ngIf="secondary.rank == 1; then firstPlaceBlock else nonFirstPlaceBlock"></div>
+        <ng-template #firstPlaceBlock class="row margin-top-10">
+            <div class="col-12 margin-bottom-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 margin-bottom-10">
+                                <h3 class="mb-0 text-truncated">{{secondary.displayName}}</h3>
+                                <h6 class="mb-0 text-truncated">Software Developer</h6>
+                            </div>
+                            <div class="col-6">
+                                <span class="score-span">Score:</span><br>
+                                <span
+                                    class="f-score-value">{{secondary.currentScore}}/{{secondary.totalOfferedScore}}</span><br>
+                                <img src="assets/icons/cc-wing-shield.png" alt="Avatar" class="img-fluid">
+                            </div>
+                            <div class="col-6 avatar-container">
+                                <app-rank-avatar [rank]="secondary.rank" [avatarUrl]="secondary.avatarUrl">
+                                </app-rank-avatar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </ng-template>
+        <ng-template #nonFirstPlaceBlock class="row margin-top-10">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 nf-current-score">
+                        <span>{{secondary.currentScore}}/{{secondary.totalOfferedScore}}</span>
+                    </div>
+                    <div class="col-2 nf-rank-container" [ngStyle]="{'background-image': 'url(' + nonFirstPlaceIconUrl + ')'}">
+                        <span class="rank-pentagon-container">{{secondary.rank}}</span>
+                    </div>
+                    <div class="col-3 nf-avatar-container">
+                        <app-rank-avatar [rank]="secondary.rank" [avatarUrl]="secondary.avatarUrl">
+                        </app-rank-avatar>
+                    </div>
+                    <div class="col-7 auto-margin">
+                        <span class="text-truncated nf-display-name">{{secondary.displayName}}</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </ng-template>
+    </div>
+</div>

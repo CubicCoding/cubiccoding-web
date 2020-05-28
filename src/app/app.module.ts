@@ -17,6 +17,8 @@ import { StudentProfileComponent } from './dashboard/components/student-profile/
 import { ToastrModule } from 'ngx-toastr';
 import { ImagePreloaderDirective } from './shared/image-preloader.directive';
 import { ContactComponent } from './auth/components/contact/contact.component';
+import { ScoreboardComponent } from './dashboard/components/scoreboard/scoreboard.component';
+import { RankAvatarComponent } from './dashboard/components/rank-avatar/rank-avatar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ContactComponent } from './auth/components/contact/contact.component';
     VoucherComponent,
     StudentProfileComponent,
     ImagePreloaderDirective,
-    ContactComponent
+    ContactComponent,
+    ScoreboardComponent,
+    RankAvatarComponent
   ],
   imports: [
     BrowserModule,

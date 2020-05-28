@@ -22,24 +22,14 @@
     border-bottom-right-radius: 10px;
 }
 
-.profile-page .profile img {
-    max-width: 45%;
-    width: 100%;
-    margin: 0 auto;
-    -webkit-transform: translate3d(0,-50%,0);
-    -moz-transform: translate3d(0,-50%,0);
-    -o-transform: translate3d(0,-50%,0);
-    -ms-transform: translate3d(0,-50%,0);
-    transform: translate3d(0,-50%,0);
-    border: 5px solid rgba(255, 255, 255, 1);    
+.avatar-profile-container {
+    width: 200px;
+    height: 200px;
+    margin: auto;
 }
 
 .img-raised {
     box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
-}
-
-.rounded-circle {
-    border-radius: 50%!important;
 }
 
 .title {

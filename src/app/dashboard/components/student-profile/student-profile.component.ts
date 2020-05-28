@@ -21,21 +21,21 @@ export class StudentProfileComponent implements OnInit {
   primary: ScorePrimary;
   userProfile: UserProfile;
   defaultUrl = 'assets/images/default-avatar.JPG';
-  scoreboardInfo: ScoreboardInfo;
   loading = false;
 
   constructor(private toastr: ToastrService,
     private authService: AuthService,
     private scoreboardservice: ScoreboardService) {
     this.authService.userProfile.subscribe(userProfile => this.userProfile = userProfile);
-    this.scoreboardservice.scoreboardInfo.subscribe(scoreboardInfo => this.scoreboardInfo != null ? scoreboardInfo : null );
+    this.scoreboardservice.scoreboardInfo.subscribe(scoreboardInfo => {
+      this.primary = scoreboardInfo != null ? scoreboardInfo.primary : null;
+      this.primary.username = this.userProfile.username;
+    });
   }
 
   ngOnInit(): void {
-    let isRecentlyLoggedIn = localStorage.getItem("isRecentlyLoggedIn");
-
     //Grab the scoreboard if subject doesn't provide it
-    if(!this.scoreboardInfo) {
+    if(!this.primary) {
       this.loading = true;
       this.scoreboardservice.getScoreboard()
         .subscribe(
@@ -57,8 +57,9 @@ export class StudentProfileComponent implements OnInit {
   }
 
   private handleError(statusCode: number) {
-    if(statusCode == 404) {
-      //If scoreboard is not found, set the properties available in the currentProfile object
+    if(statusCode == 404 || statusCode == 0) {
+      //If scoreboard is not found or server is down but we have profile information, 
+      //set the properties available in the currentProfile object
       this.setDefaultPrimaryProperties();
     }
   }

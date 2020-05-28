@@ -1,0 +1,61 @@
+.rounded-rank-avatar {
+    border-radius: 50%!important;
+    width: 100%; 
+    height: 100%;    
+}
+
+.first-place-border {
+    border: 6px solid #fff48e;
+}
+
+.second-place-border {
+    border: 4px solid silver;
+}
+
+.third-place-border {
+    border: 4px solid #cd7f32;
+}
+
+.default-border {
+    border: 4px solid #7ecefd;
+}
+
+.rank-badge {
+    position: absolute; 
+    bottom: -5px; 
+    right: -10px;
+}
+
+.rank-container {
+    position: relative;
+}
+
+/* If the screen size is 401px wide or more.. */
+@media screen and (min-width: 401px) {
+    .f-height {
+        height: 100px;
+    }
+    .nf-height {
+        height: 50px;
+    }
+}
+
+/* If the screen size is 400px wide or less.. */
+@media screen and (max-width: 400px) {
+    .f-height {
+        height: 50px;
+    }
+    .nf-height {
+        height: 25px;
+    }
+}
+
+/* If the screen size is 450px height or less.. */
+@media screen and (max-height: 450px) {
+    .f-height {
+        height: 100px;
+    }
+    .nf-height {
+        height: 50px;
+    }
+}

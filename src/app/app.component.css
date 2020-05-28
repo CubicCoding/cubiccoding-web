@@ -1,7 +1,15 @@
 a {
-    color: white;
+    color: darkgrey;
 }
 
 #cubiccoding-nav-logo {
     width : 35px;
+}
+
+.active {
+    color: white;
+}
+
+.btn-just-icon {
+    color: white;
 }
