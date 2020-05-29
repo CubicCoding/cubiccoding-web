@@ -18,31 +18,42 @@ h3, h6 {
     transform: translate(-50%, -50%);
 }
 
-/* If the screen size is 401px wide or more.. */
-@media screen and (min-width: 401px) {
+.nf-avatar-container {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+/* If the screen size is 416px wide or more.. */
+@media screen and (min-width: 416px) {
     h3 {
         font-size: 40px;
     }
+
     h6 {
         font-size: 25px;
     }
+
     .tournament-info {
         font-size: 1.5rem;
     }
+
     .score-span {
         font-size: 20px;
         color: gray;
     }
+
     .f-score-value {
         font-size: 40px;
     }
+
     .avatar-container {
-        height: 300px;
-        width: 300px;
+        height: 220px;
     }
+
     .nf-avatar-container {
-        height: 150px;
+        height: 125px;
     }
+
     .nf-rank-container {
         background-size: 100px 100px !important;        
         background-repeat: no-repeat !important;
@@ -50,51 +61,66 @@ h3, h6 {
         background-position: center !important;
         font-size: 2rem;
     }
+
     .nf-display-name {
         font-size: 2rem;
+        color: gray;
     }
+
     .nf-current-score {
         font-size: 2rem;
         text-align: end;
         color: #2f88a7;
         font-weight: 500;
     }
+
+    .secondaries-container {
+        max-width: 600px;
+        padding: 25px;
+        margin: auto;
+        box-shadow: 0 5px 10px 1px rgba(0, 0, 0, .14), 0 3px 15px 2px rgba(0, 0, 0, .12), 0 4px 5px -10px rgba(0, 0, 0, .2);
+        margin-bottom: 25px;
+    }
 }
 
-/* If the screen size is 400px wide or less.. */
-@media screen and (max-width: 400px) {
+/* If the screen size is 415px wide or less.. */
+@media screen and (max-width: 415px) {
     h3 {
         font-size: 20px;
     }
+    
     h6 {
         font-size: 12px;
     }
+
     .tournament-info {
         font-size: 1rem;
     }
+
     .score-span {
         font-size: 13px;
         color: gray;
     }
+
     .f-score-value {
         font-size: 22px;
     }
-    .avatar-container {
-        height: auto;
-        width: auto;
-    }
+
     .nf-avatar-container {
-        height: 55px;
+        height: 75px;
     }
+
     .btn-primary {
         font-size: 0.8rem;
     }
+
     .nf-current-score {
         font-size: 1rem;
         text-align: end;
         color: #2f88a7;
         font-weight: 400;
     }
+
     .nf-rank-container {
         background-size: 50px 50px !important;        
         background-repeat: no-repeat !important;
@@ -110,12 +136,16 @@ h3, h6 {
         height: auto;
         width: auto;
     }
+
     .nf-avatar-container {
         height: 100px;
     }
+
     .nf-display-name {
         font-size: 1.5rem;
+        color: gray;
     }
+
     .nf-rank-container {
         background-size: 75px 75px !important;        
         background-repeat: no-repeat !important;
@@ -125,22 +155,34 @@ h3, h6 {
     }
 }
 
+/* If the screen size is 350px width or less.. */
+@media screen and (max-width: 350px) {
+    .avatar-container {
+        height: 95px;
+    }
+
+    .nf-avatar-container {
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    .avatar-container {
+        height: 135px;
+    }
+
+    .nf-avatar-container {
+        height: 85px;
+    }
+}
+
 .scoreboard-error {
     display: inline-flex;
     margin-top: 25px;
 }
 
 .secondaries-container {
-    max-width: 750px;
-    margin: auto;
-}
-
-.margin-top-10 {
-    margin-top: 10px;
-}
-
-.margin-bottom-10 {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .f-score-value {

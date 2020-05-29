@@ -6,11 +6,23 @@
     <div class="profile-content">
       <div class="container">
         <div class="row row-avatar">
+          <div class="col-3" *ngIf="primary.rank">
+            <span class="value-title">{{primary.currentScore}}/{{primary.totalOfferedScore}}</span>
+            <span class="text-title">Score</span>
+          </div>
+          <div class="col-6" *ngIf="primary.rank">
+          </div>
+          <div class="col-3" *ngIf="primary.rank">
+            <span class="value-title"># {{primary.rank}}</span>
+            <span class="text-title">Rank</span>
+          </div>          
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar-profile-container">
-                <img cc-avatar-preloader="{{userProfile.avatarUrl || defaultUrl}}" alt="Circle Image"
+                <img *ngIf="!primary.rank" cc-avatar-preloader="{{userProfile.avatarUrl || defaultUrl}}" alt="Circle Image"
                   class="img-raised rounded-circle img-fluid">
+                <app-rank-avatar *ngIf="primary.rank" [rank]="primary.rank" [avatarUrl]="primary.avatarUrl">
+                </app-rank-avatar>
               </div>
             </div>
           </div>
@@ -18,29 +30,30 @@
         <div *ngIf="!loading" class="student-info">
           <h3 class="title">{{primary.displayName}}</h3>
           <h5>Software Developer</h5>
-          <div *ngIf="primary.currentScore != null" class="row">
-            <div class="col-6 left-student-info">Score :</div>
-            <div class="col-6 right-student-info">{{primary.currentScore + '/' + primary.totalOfferedScore}}</div>
+          <div *ngIf="primary.classroomName != null" class="row margin-bottom-10">
+            <div class="col-6 left-student-info">Grupo :</div>
+            <div class="col-6 right-student-info">{{primary.classroomName}}</div>
           </div>
-          <div class="row">
+          <div class="row margin-bottom-10">
             <div class="col-6 left-student-info">Curso :</div>
             <div class="col-6 right-student-info">{{primary.courseName}}</div>
           </div>
-          <div class="row">
+          <div class="row margin-bottom-10">
             <div class="col-6 left-student-info">Fecha de inicio :</div>
             <div class="col-6 right-student-info">{{primary.startDate | date:'shortDate'}}</div>
           </div>
-          <div class="row">
+          <div class="row margin-bottom-10">
             <div class="col-6 left-student-info">Email :</div>
             <div class="col-6 right-student-info d-inline-block text-truncate">{{primary.email}}</div>
           </div>
-          <div class="row">
+          <div class="row margin-bottom-10">
             <div class="col-6 left-student-info">Usuario :</div>
             <div class="col-6 right-student-info">{{primary.username}}</div>
           </div>
         </div>
         <div *ngIf="loading" class="loading-student-info">
-          <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span> Cargando información...
+          <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span> Cargando
+          información...
         </div>
       </div>
     </div>

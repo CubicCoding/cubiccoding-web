@@ -9,4 +9,5 @@ export class ScorePrimary {
     instructorName: string;
     startDate: Date;
     username: string;
+    classroomName: string;
 }

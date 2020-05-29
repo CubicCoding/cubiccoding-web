@@ -1,3 +1,91 @@
+/* If the screen size is 416px wide or more.. */
+@media screen and (min-width: 416px) {
+    .avatar-profile-container {
+        width: 280px;
+        height: 280px;
+        margin: auto;
+    }
+
+    .row-avatar {
+        max-height: 25vh;
+    }
+
+    .main {
+        margin-top: 15vh;
+    }
+
+    .value-title {
+        color: white; 
+        position: absolute; 
+        top: -50px;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: cursive;
+    }
+    
+    .text-title {
+        color: gray; 
+        font-size: 2rem;
+    }
+}
+
+/* If the screen size is 415px wide or less.. */
+@media screen and (max-width: 415px) {
+    .avatar-profile-container {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+    }
+
+    .row-avatar {
+        max-height: 20vh;
+    }
+
+    .main {
+        margin-top: 10vh;
+    }
+
+    .value-title {
+        color: white; 
+        position: absolute; 
+        top: -30px; 
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: cursive;
+    }
+    
+    .text-title {
+        color: gray; 
+        font-size: 1.2rem;
+    }
+}
+
+/* If the screen size is 450px height or less.. */
+@media screen and (max-height: 450px) {
+    .avatar-profile-container {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+
+    .row-avatar {
+        max-height: 40vh;
+    }
+}
+
+/* If the screen size is 350px width or less.. */
+@media screen and (max-width: 360px) {
+    .avatar-profile-container {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+    }
+
+    .row-avatar {
+        max-height: 22vh;
+    }
+}
+
 .cc-header-logo {
     display: block; 
     padding: 10px;
@@ -13,19 +101,12 @@
     background: white;
     position: relative;
     z-index: 3;
-    margin-top: 15vh;
 }
 
 .profile-page {
     background-color: #212429;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-
-.avatar-profile-container {
-    width: 200px;
-    height: 200px;
-    margin: auto;
 }
 
 .img-raised {
@@ -36,12 +117,8 @@
     margin-top: 15px;
     margin-bottom: 10px;
     min-height: 32px;
-    color: #3C4858;
+    color: gray;
     font-weight: 700;
-}
-
-.row-avatar {
-    max-height: 15vh;
 }
 
 .img-fluid {

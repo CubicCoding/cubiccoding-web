@@ -58,7 +58,7 @@ html, body {
     top: 12px !important;
 }
 
-.profile-page .profile img {
+.avatar-profile-container {
     max-width: 100%;
     max-height: 100%;
     margin: 0 auto;
@@ -67,7 +67,6 @@ html, body {
     -o-transform: translate3d(0,-50%,0);
     -ms-transform: translate3d(0,-50%,0);
     transform: translate3d(0,-50%,0);
-    border: 6px solid rgba(255, 255, 255, 1);    
 }
 
 .rounded-circle {
@@ -76,4 +75,12 @@ html, body {
 
 .auto-margin {
     margin: auto;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
 }

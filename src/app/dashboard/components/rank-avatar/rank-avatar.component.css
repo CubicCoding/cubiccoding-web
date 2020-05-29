@@ -24,38 +24,9 @@
     position: absolute; 
     bottom: -5px; 
     right: -10px;
+    height: 35%;
 }
 
 .rank-container {
     position: relative;
-}
-
-/* If the screen size is 401px wide or more.. */
-@media screen and (min-width: 401px) {
-    .f-height {
-        height: 100px;
-    }
-    .nf-height {
-        height: 50px;
-    }
-}
-
-/* If the screen size is 400px wide or less.. */
-@media screen and (max-width: 400px) {
-    .f-height {
-        height: 50px;
-    }
-    .nf-height {
-        height: 25px;
-    }
-}
-
-/* If the screen size is 450px height or less.. */
-@media screen and (max-height: 450px) {
-    .f-height {
-        height: 100px;
-    }
-    .nf-height {
-        height: 50px;
-    }
 }

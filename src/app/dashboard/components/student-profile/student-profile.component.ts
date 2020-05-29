@@ -30,6 +30,7 @@ export class StudentProfileComponent implements OnInit {
     this.scoreboardservice.scoreboardInfo.subscribe(scoreboardInfo => {
       this.primary = scoreboardInfo != null ? scoreboardInfo.primary : null;
       this.primary.username = this.userProfile.username;
+      this.primary.classroomName = scoreboardInfo.tournamentInfo.classroomName;
     });
   }
 

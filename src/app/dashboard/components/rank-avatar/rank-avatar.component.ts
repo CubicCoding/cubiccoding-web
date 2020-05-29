@@ -13,7 +13,6 @@ export class RankAvatarComponent implements OnInit {
   ringColorClass: string = "default-border";
   rankBagdeUrl: string;
   isAmongFirstThree: boolean;
-  badgeHeightClass: string;
 
   constructor() { }
 
@@ -28,21 +27,18 @@ export class RankAvatarComponent implements OnInit {
           this.ringColorClass = "first-place-border";
           this.rankBagdeUrl = "assets/icons/cc-badge-gold.png";
           this.isAmongFirstThree = true;
-          this.badgeHeightClass = "f-height";
           break;        
         }
         case 2: {
           this.ringColorClass = "second-place-border";
           this.rankBagdeUrl = "assets/icons/cc-badge-silver.png";
           this.isAmongFirstThree = true;
-          this.badgeHeightClass = "nf-height";
           break;           
         } 
         case 3: {
           this.ringColorClass = "third-place-border";
           this.rankBagdeUrl = "assets/icons/cc-badge-bronze.png";
           this.isAmongFirstThree = true;
-          this.badgeHeightClass = "nf-height";
           break;  
         }
       }      
