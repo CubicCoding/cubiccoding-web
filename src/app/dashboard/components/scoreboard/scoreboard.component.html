@@ -19,12 +19,14 @@
     <div class="row">
         <div class="col-12 margin-bottom-10 d-flex">
             <div class="col-6 auto-margin">
-                <span class="text-truncated tournament-info">Torneo actual: <b>{{tournamentInfo.tournamentName}}</b></span>
+                <span class="text-truncated tournament-info">Torneo actual:
+                    <b>{{tournamentInfo.tournamentName}}</b></span>
             </div>
             <div class="col-6 auto-margin">
-                <button class="btn btn-primary">Pregunta Rápida</button>
-            </div>            
-        </div>        
+                <button class="btn btn-primary" (click)="openScoreTestModal()">Prueba
+                    Rápida</button>
+            </div>
+        </div>
     </div>
     <div *ngFor="let secondary of secondaries">
         <div *ngIf="secondary.rank == 1; then firstPlaceBlock else nonFirstPlaceBlock"></div>
@@ -59,7 +61,8 @@
                     <div class="col-12 nf-current-score">
                         <span>{{secondary.currentScore}}/{{secondary.totalOfferedScore}}</span>
                     </div>
-                    <div class="col-2 nf-rank-container" [ngStyle]="{'background-image': 'url(' + nonFirstPlaceIconUrl + ')'}">
+                    <div class="col-2 nf-rank-container"
+                        [ngStyle]="{'background-image': 'url(' + nonFirstPlaceIconUrl + ')'}">
                         <span class="rank-pentagon-container">{{secondary.rank}}</span>
                     </div>
                     <div class="col-3 nf-avatar-container">

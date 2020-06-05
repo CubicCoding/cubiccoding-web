@@ -7,6 +7,7 @@ import { environment } from '@environments/environment';
 import { ScoreboardInfo } from '@app/dashboard/models/scoreboard-info';
 import { AuthService } from '@app/auth/auth.service';
 import { map } from 'rxjs/operators';
+import { ScoreTest } from './models/score-test';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,23 @@ export class ScoreboardService {
         this.scoreboardSubject.next(scoreboardInfo);
         return scoreboardInfo;
       }));
+  }
+
+  getScoreTest(scoreTestUuid) {
+    return this.http.get<ScoreTest>(`${environment.hostApiUrl}/api/v1/scoreboard/score-tests/${scoreTestUuid}`, { observe: 'response' })
+      .pipe(map(response => {
+        let scoreTest = response.body;
+        return scoreTest;
+      }));
+  }
+
+  createScoreAnswer(scoreTestUuid: string, userAnswers: number[]) {
+    let scoreAnswer = {
+      scoreTestUuid: scoreTestUuid,
+      userAnswers: userAnswers
+    }
+
+    return this.http.post<any>(`${environment.hostApiUrl}/api/scoreboard/score-answers`, scoreAnswer, { observe: 'response' })
+      .pipe(map(response => response.body));
   }
 }

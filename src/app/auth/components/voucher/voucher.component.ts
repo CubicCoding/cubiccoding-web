@@ -19,7 +19,6 @@ export class VoucherComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router) { 
       if(this.authService.currentUserValue) {
         this.router.navigate([CCRoutes.STUDENT_PROFILE])

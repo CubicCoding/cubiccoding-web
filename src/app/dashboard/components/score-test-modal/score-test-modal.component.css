@@ -1,0 +1,54 @@
+.rank-pentagon-container {
+    position: relative;
+    top: 15px;
+}
+
+.option-number-container {
+    background-size: 75px 75px !important;
+    height: 75px !important;
+    width: 75px !important;
+    background-repeat: no-repeat !important;
+    color: white !important;
+    background-position: center !important;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 20px;
+    cursor: pointer;   
+}
+
+.card-body {
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, .14), 0 3px 15px 2px rgba(0, 0, 0, .12), 0 4px 5px -10px rgba(0, 0, 0, .2);      
+}
+
+.btn-primary {
+    background-color: #29475f;
+}
+
+.selected-option {
+    background-color: #7ecefd;
+}
+
+.unselected-option {
+    background-color: white;
+}
+
+.modal-dialog{
+    overflow-y: initial !important;
+}
+
+.modal-body{
+    height: 100%;
+    overflow-y: auto;
+}
+
+.close {
+    font-size: 2rem;
+}
+
+.max-score {
+    padding: 15px;
+    font-size: 1.5rem;
+}

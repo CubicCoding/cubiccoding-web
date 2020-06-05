@@ -1,0 +1,85 @@
+<form *ngIf="!scoreTest && !userResultsFeedback" [formGroup]="scoreTestForm" (ngSubmit)="getScoreTest()"
+    class="needs-validation" novalidate>
+    <div class="modal-header">
+        <h5 class="modal-title" id="scoreTestTitle">Descargar Prueba Rápida</h5>
+        <button type="button" class="close" (click)="closeScoreTestModal()" tabIndex="-1">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-label-group">
+            <input type="text" id="quickTestId" class="form-control" placeholder="ID de la prueba"
+                formControlName="scoreTestUuid" required autofocus
+                [ngClass]="{ 'is-invalid': submitted && f.scoreTestUuid.errors }">
+            <div *ngIf="submitted && f.scoreTestUuid.errors" class="is-invalid text-center">
+                <div *ngIf="f.scoreTestUuid.errors.required">ID es requerido</div>
+                <div *ngIf="f.scoreTestUuid.errors.minlength">Al menos 5 caracteres</div>
+            </div>
+        </div>
+        <div *ngIf="scoreTestError" class="alert alert-danger" role="alert">
+            {{ scoreTestError }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="closeScoreTestModal()" class="btn btn-danger">Cancelar</button>
+        <button [disabled]="scoreTestloading" type="submit" class="btn btn-primary">
+            <span *ngIf="scoreTestloading" class="spinner-border spinner-border-sm" role="status"
+                aria-hidden="true"></span>
+            {{ scoreTestloading ? 'Descargando pregunta..' : 'Descargar' }}</button>
+    </div>
+</form>
+<div *ngIf="scoreTest && !userResultsFeedback" class="needs-validation" novalidate>    
+    <div class="modal-header">
+        <h5 class="modal-title">Score máximo: <b>{{scoreTest.maxScore}}</b></h5>
+        <button type="button" class="close" (click)="closeScoreTestModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>        
+    <div class="modal-body">
+        <h4 class="max-score">{{scoreTest.questionTitle}}</h4>
+        <div *ngFor="let option of scoreTest.options; index as idx">
+            <div class="card" (click)="toggleUserAnswer(idx)"
+                [ngClass]="isOptionSelected(idx) ? 'selected-option' : 'unselected-option'">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 margin-bottom-10">
+                            <div class="option-number-container auto-margin"
+                                style="background-image: url(assets/icons/cc-inverted-pentagon-blue.png);">
+                                <span class="rank-pentagon-container">{{idx}}</span>
+                            </div>
+                            <h4 class="mb-0 text-truncated text-center">{{option}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="scoreAnswerError" class="alert alert-danger text-center" role="alert">
+            {{ scoreAnswerError }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button [disabled]="scoreAnswerloading" type="button" (click)="closeScoreTestModal()"
+            class="btn btn-danger">Cancelar</button>
+        <button [disabled]="scoreAnswerloading || checkedAnswers.size <= 0"
+            (click)="createScoreAnswer()" type="button" class="btn btn-primary">
+            <span *ngIf="scoreAnswerloading" class="spinner-border spinner-border-sm" role="status"
+                aria-hidden="true"></span>
+            {{ scoreAnswerloading ? 'Validando respuesta..' : 'Responder' }}</button>
+    </div>
+</div>
+<div id="score-test-results" *ngIf="userResultsFeedback">
+    <div class="modal-header">
+        <h3 class="modal-title" id="scoreResultsTitle">Resultado</h3>
+        <button type="button" class="close" (click)="closeScoreTestModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="alert" [ngClass]="alertClass" role="alert">
+            {{ userResultsFeedback }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="closeScoreTestModal()" class="btn btn-primary">Cerrar</button>
+    </div>
+</div>

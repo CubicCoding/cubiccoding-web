@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -19,6 +20,7 @@ import { ImagePreloaderDirective } from './shared/image-preloader.directive';
 import { ContactComponent } from './auth/components/contact/contact.component';
 import { ScoreboardComponent } from './dashboard/components/scoreboard/scoreboard.component';
 import { RankAvatarComponent } from './dashboard/components/rank-avatar/rank-avatar.component';
+import { ScoreTestModalComponent } from './dashboard/components/score-test-modal/score-test-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { RankAvatarComponent } from './dashboard/components/rank-avatar/rank-ava
     ImagePreloaderDirective,
     ContactComponent,
     ScoreboardComponent,
-    RankAvatarComponent
+    RankAvatarComponent,
+    ScoreTestModalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,11 +41,15 @@ import { RankAvatarComponent } from './dashboard/components/rank-avatar/rank-ava
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule,
     ToastrModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ScoreTestModalComponent
+  ]
 })
 export class AppModule { }

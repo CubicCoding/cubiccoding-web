@@ -1,4 +1,9 @@
-<div @fade class="profile-page">
+<div *ngIf="loading" class="student-profile-error">
+  <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+  <h5>Cargando información...</h5>
+</div>
+
+<div *ngIf="!loading" @fade class="profile-page">
   <div class="row cc-header-logo">
     <img src="assets/images/CubicCoding1x.png" class="img-fluid" alt="CubicCoding">
   </div>
@@ -15,12 +20,12 @@
           <div class="col-3" *ngIf="primary.rank">
             <span class="value-title"># {{primary.rank}}</span>
             <span class="text-title">Rank</span>
-          </div>          
+          </div>
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar-profile-container">
-                <img *ngIf="!primary.rank" cc-avatar-preloader="{{userProfile.avatarUrl || defaultUrl}}" alt="Circle Image"
-                  class="img-raised rounded-circle img-fluid">
+                <img *ngIf="!primary.rank" cc-avatar-preloader="{{userProfile.avatarUrl || defaultUrl}}"
+                  alt="Avatar" class="img-raised rounded-circle img-fluid">
                 <app-rank-avatar *ngIf="primary.rank" [rank]="primary.rank" [avatarUrl]="primary.avatarUrl">
                 </app-rank-avatar>
               </div>
