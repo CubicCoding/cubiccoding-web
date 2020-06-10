@@ -1,0 +1,126 @@
+.user-current-score {
+    color: white;
+    font-size: 1.5rem;
+    font-family: cursive;
+    margin-top: 25%;
+}
+
+.user-current-rank {
+    color: white; 
+    font-size: 1.5rem;
+    font-family: cursive;
+    margin-top: 25%;
+}
+
+.active {
+    color: #29475f;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, .14), 0 3px 15px 2px rgba(0, 0, 0, .12), 0 4px 5px -10px rgba(0, 0, 0, .2);
+}
+
+a {
+    color: gray;
+}
+
+.nav-link {
+    font-size: 1.5rem
+}
+
+.main-header-container {
+    background-color: #212429;
+    padding: 20px;
+    margin: 0
+}
+
+.history-nav {
+    margin-bottom: 25px;
+}
+
+.history-outlet {
+    margin: 0; width: 100%;
+}
+
+/* If the screen size is 416px wide or more.. */
+@media screen and (min-width: 416px) {
+    .score-history-container {
+        max-width: 700px;        
+        margin: auto;        
+        margin-bottom: 25px;
+    }
+
+    .avatar-history-container {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+}
+
+/* If the screen size is 415px wide or less.. */
+@media screen and (max-width: 415px) {
+    .avatar-history-container {
+        width: 140px;
+        height: 140px;
+        margin: auto;
+    }
+
+    .user-current-score {
+        font-size: 1rem;
+        right: 15px;
+        margin-top: 25%;
+    }
+
+    .user-current-rank {
+        font-size: 1rem;
+        left: 20px;
+        margin-top: 25%;
+    }
+
+    .nav-link {
+        font-size: 1rem
+    }
+}
+
+/* If the screen size is 450px height or less.. */
+@media screen and (max-height: 450px) {
+    .avatar-history-container {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+    }
+
+    .user-current-score {
+        font-size: 1.2rem;
+        right: 10px;
+        margin-top: 25%;
+    }
+
+    .user-current-rank {
+        font-size: 1.2rem;
+        left: 20px;
+        margin-top: 25%;
+    }
+
+    .nav-link {
+        font-size: 1.2rem
+    }
+}
+
+/* If the screen size is 350px width or less.. */
+@media screen and (max-width: 360px) {
+    .avatar-history-container {
+        width: 120px;
+        height: 120px;
+        margin: auto;
+    }
+
+    .user-current-score {
+        font-size: 1rem;
+        right: 15px;
+        margin-top: 25%;
+    }
+
+    .user-current-rank {
+        font-size: 1rem;
+        left: 20px;
+        margin-top: 25%;
+    }
+}

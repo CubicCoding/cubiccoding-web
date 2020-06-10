@@ -45,7 +45,6 @@ export class StudentProfileComponent implements OnInit {
             if(data.primary != null) {
               this.primary =  data.primary;
               this.primary.username = this.userProfile.username;
-              this.primary.username = this.userProfile.username;
             } else {
               this.setDefaultPrimaryProperties();
             }

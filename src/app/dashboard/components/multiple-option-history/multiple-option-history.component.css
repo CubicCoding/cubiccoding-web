@@ -1,0 +1,140 @@
+.test-header {
+    color: #29475f;
+}
+
+.question-title {
+    background-color: #2f88a7;
+    color: gray;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 4px; margin-bottom: 15px;
+}
+
+.question-option {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.test-header {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.full-score-obtained {
+    color: #28a745;
+    background-color: white;
+    border-color: #28a745;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.partial-score-obtained {
+    color: #7ecefd;
+    background-color: white;
+    border-color: #7ecefd;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.zero-score-obtained {
+    color: red;
+    background-color: white;
+    border-color: red;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.score-default {
+    color: gray;
+    background-color: white;
+    border-color: gray;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.btn {
+    cursor: unset !important;
+    padding: .250rem .250rem;
+}
+
+/* If the screen size is 416px wide or more.. */
+@media screen and (min-width: 416px) {
+    .question-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 5px; margin-bottom: 20px;
+    }
+
+    .question-option {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    .test-header {
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+
+    .full-score-obtained {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    
+    .partial-score-obtained {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    
+    .zero-score-obtained {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    
+    .score-default {
+        font-weight: 400;
+        font-size: 1.1rem;
+    }
+}
+
+/* If the screen size is 450px height or less.. */
+@media screen and (max-height: 450px) {
+    .question-title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 10px;
+        border-radius: 4px; margin-bottom: 15px;
+    }
+
+    .question-option {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .test-header {
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .full-score-obtained {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    
+    .partial-score-obtained {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    
+    .zero-score-obtained {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    
+    .score-default {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
