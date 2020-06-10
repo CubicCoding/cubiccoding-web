@@ -15,6 +15,7 @@ import { ScoreboardComponent } from './dashboard/components/scoreboard/scoreboar
 import { ScoreHistoryComponent } from './dashboard/components/score-history/score-history.component';
 import { MultipleOptionHistoryComponent } from './dashboard/components/multiple-option-history/multiple-option-history.component';
 import { ChallengeHistoryComponent } from './dashboard/components/challenge-history/challenge-history.component';
+import { HelpComponent } from './dashboard/components/help/help.component';
 
 const routes: Routes = [
   {path: '', redirectTo: CCRoutes.STUDENT_PROFILE, pathMatch: 'full'},
@@ -40,6 +41,7 @@ const routes: Routes = [
         component: ChallengeHistoryComponent
       }
     ]},
+  {path: CCRoutes.HELP, component: HelpComponent},
 
   { path: '**', redirectTo: CCRoutes.SIGN_IN }
 ];

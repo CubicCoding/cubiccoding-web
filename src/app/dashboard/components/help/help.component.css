@@ -1,0 +1,32 @@
+.card {
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.card-title {
+    color: gray;
+    font-size: 1rem;
+}
+
+.card-body {
+    padding: .25rem;
+}
+
+.staff-container {
+    width: 100%;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+/* If the screen size is 416px wide or more.. */
+@media screen and (min-width: 416px) {
+    .staff-container {
+        width: 75%;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+}

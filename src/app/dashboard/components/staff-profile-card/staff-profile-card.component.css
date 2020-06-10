@@ -1,0 +1,181 @@
+.card.hovercard .cardheader {
+    background-color: #212429;
+    background-size: cover;
+    height: 100px;
+    color: white;
+    border-top-left-radius: .75rem;
+    border-top-right-radius: .75rem;
+}
+
+.card.hovercard .avatar {
+    position: relative;
+    top: -50px;
+    right: 100px;
+    margin-bottom: -50px;
+}
+
+.card.hovercard .avatar img {
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.card {
+    border-radius: .75rem;
+    margin-bottom: 25px;
+    min-height: 200px;
+}
+
+.staff-info {
+    position: absolute;
+    right: 20px;
+    top: 110px;
+}
+
+/* If the screen size is 416px wide or more.. */
+@media screen and (min-width: 416px) {
+    .card-container {
+        width: 45%;
+        float: left;
+        margin-left: 25px;
+    }
+
+    .card.hovercard .avatar img {
+        width: 120px;
+        height: 120px;
+        max-width: 120px;
+        max-height: 120px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .staff-name {
+        font-size: 1.5rem;
+    }
+
+    .staff-title {
+        font-size: 0.8rem;
+    }
+
+    
+    .staff-data {
+        font-size: 1rem;
+    }
+}
+
+/* If the screen size is 415px wide or less.. */
+@media screen and (max-width: 415px) {
+    .card.hovercard .avatar img {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+        max-height: 100px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .staff-name {
+        font-size: 1.3rem;
+    }
+
+    .staff-title {
+        font-size: 0.8rem;
+    }
+
+    
+    .staff-data {
+        font-size: 0.9rem;
+    }
+}
+
+/* If the screen size is 450px height or less.. */
+@media screen and (max-height: 450px) {
+    .card-container {
+        width: 100%;
+        float: left;
+        margin-left: 25px;
+    }
+
+    .card.hovercard .avatar img {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+        max-height: 100px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .staff-name {
+        font-size: 1.3rem;
+    }
+
+    .staff-title {
+        font-size: 0.8rem;
+    }
+
+    .staff-data {
+        font-size: 0.9rem;
+    }
+}
+
+/* If the screen size is 350px width or less.. */
+@media screen and (max-width: 350px) {
+    .card.hovercard .avatar img {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+        max-height: 100px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .staff-name {
+        font-size: 1.3rem;
+    }
+
+    .staff-title {
+        font-size: 0.8rem;
+    }
+
+    .staff-data {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    .card.hovercard .avatar img {
+        width: 100px;
+        height: 100px;
+        max-width: 100px;
+        max-height: 100px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .staff-name {
+        font-size: 1.3rem;
+    }
+
+    .staff-title {
+        font-size: 0.8rem;
+    }
+
+    .staff-data {
+        font-size: 0.9rem;
+    }
+}

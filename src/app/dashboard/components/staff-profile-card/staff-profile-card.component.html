@@ -1,0 +1,15 @@
+<div class="card-container">
+    <div class="card hovercard">
+        <div class="cardheader">
+            <div class="staff-name">{{staffInformation.name}}</div>
+            <div class="staff-title">{{staffInformation.title}}</div>
+        </div>
+        <div class="avatar">
+            <img alt="" [src]="staffInformation.avatarUrl">
+        </div>
+        <div class="staff-info">
+            <div class="staff-data"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{staffInformation.email}}</div>
+            <div class="staff-data"><i class="fa fa-whatsapp" aria-hidden="true"></i> {{staffInformation.phone}}</div>
+        </div>
+    </div>
+</div>

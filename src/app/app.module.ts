@@ -24,6 +24,8 @@ import { ScoreTestModalComponent } from './dashboard/components/score-test-modal
 import { ScoreHistoryComponent } from './dashboard/components/score-history/score-history.component';
 import { MultipleOptionHistoryComponent } from './dashboard/components/multiple-option-history/multiple-option-history.component';
 import { ChallengeHistoryComponent } from './dashboard/components/challenge-history/challenge-history.component';
+import { HelpComponent } from './dashboard/components/help/help.component';
+import { StaffProfileCardComponent } from './dashboard/components/staff-profile-card/staff-profile-card.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ChallengeHistoryComponent } from './dashboard/components/challenge-hist
     ScoreTestModalComponent,
     ScoreHistoryComponent,
     MultipleOptionHistoryComponent,
-    ChallengeHistoryComponent
+    ChallengeHistoryComponent,
+    HelpComponent,
+    StaffProfileCardComponent
   ],
   imports: [
     BrowserModule,
