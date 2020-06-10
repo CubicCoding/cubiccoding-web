@@ -50,7 +50,7 @@
         position: absolute; 
         top: -30px; 
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
         font-family: cursive;
     }
     
@@ -71,18 +71,48 @@
     .row-avatar {
         max-height: 40vh;
     }
+
+    .value-title {
+        color: white; 
+        position: absolute; 
+        top: -30px; 
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: cursive;
+    }
+    
+    .text-title {
+        color: gray; 
+        font-size: 1rem;
+    }
+
+    .main-raised {
+        margin-top: 80px;
+    }    
 }
 
 /* If the screen size is 350px width or less.. */
 @media screen and (max-width: 360px) {
     .avatar-profile-container {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         margin: auto;
     }
 
     .row-avatar {
         max-height: 22vh;
+    }
+
+    .text-title {
+        color: gray; 
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    .text-title {
+        color: gray; 
+        font-size: 1.2rem;
     }
 }
 

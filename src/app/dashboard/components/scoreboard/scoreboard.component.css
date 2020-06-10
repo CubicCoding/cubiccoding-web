@@ -120,7 +120,7 @@ h3, h6 {
     }
 
     .f-score-value {
-        font-size: 22px;
+        font-size: 1rem;
     }
 
     .nf-avatar-container {
@@ -150,8 +150,8 @@ h3, h6 {
 /* If the screen size is 450px height or less.. */
 @media screen and (max-height: 450px) {
     .avatar-container {
-        height: auto;
-        width: auto;
+        height: 175px;
+        width: 150px;
     }
 
     .nf-avatar-container {
@@ -169,6 +169,10 @@ h3, h6 {
         color: white !important;
         background-position: center !important;
         font-size: 1.5rem;
+    }
+
+    .f-score-value {
+        font-size: 1.2rem;
     }
 }
 
