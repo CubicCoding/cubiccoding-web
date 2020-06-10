@@ -1,4 +1,4 @@
-<div *ngIf="challenges && challenges.length > 0">
+<div @fade *ngIf="challenges && challenges.length > 0">
     <div *ngFor="let challenge of challenges">
         <div class="row test-header">
             <div class="col-6 text-left">Score: {{challenge.maxScore * challenge.scoredRatio}}/{{challenge.maxScore}}</div>
@@ -13,6 +13,6 @@
         <hr>
     </div>
 </div>
-<div *ngIf="!challenges || challenges.length == 0">
+<div @fade *ngIf="!challenges || challenges.length == 0">
     ¡Vuelve aquí cuando hayas participado en retos!
 </div>

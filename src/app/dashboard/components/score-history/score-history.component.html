@@ -3,7 +3,7 @@
     <h5>Cargando información...</h5>
 </div>
 
-<div *ngIf="!loading" class="score-history-container">
+<div @fade *ngIf="!loading" class="score-history-container">
     <div class="row main-header-container">
         <div class="col-3 user-current-score">
             Score: <br> {{scoreSecondary.currentScore}}/{{scoreSecondary.totalOfferedScore}}

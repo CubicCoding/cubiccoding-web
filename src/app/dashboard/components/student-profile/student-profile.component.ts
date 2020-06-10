@@ -5,7 +5,6 @@ import { AuthService } from '@app/auth/auth.service';
 import { UserProfile } from '@app/shared/user-profile';
 import { ScoreboardService } from '@app/dashboard/scoreboard.service';
 
-import { ScoreboardInfo } from '@app/dashboard/models/scoreboard-info';
 import { ScorePrimary } from '@app/dashboard/models/score-primary';
 import { CourseName } from '@app/dashboard/models/course-name';
 

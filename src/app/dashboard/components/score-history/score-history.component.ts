@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { UserProfile } from '@app/shared/user-profile';
 import { AuthService } from '@app/auth/auth.service';
-import { MultipleOptionTest } from '@app/dashboard/models/multiple-option-test';
-import { ChallengeTest } from '@app/dashboard/models/challenge-test';
+
 import { ScoreSecondary } from '@app/dashboard/models/score-secondary';
 import { ScoreboardService } from '@app/dashboard/scoreboard.service';
 import { Tournament } from '@app/dashboard/models/tournament';
 import { ScoreHistoryService } from '@app/dashboard/score-history.service';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-score-history',
   templateUrl: './score-history.component.html',
-  styleUrls: ['./score-history.component.css']
+  styleUrls: ['./score-history.component.css'],
+  animations: [fader]
 })
 export class ScoreHistoryComponent implements OnInit {
   tournamentInfo: Tournament;

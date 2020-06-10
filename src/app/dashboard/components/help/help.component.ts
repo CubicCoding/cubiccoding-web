@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-help',
   templateUrl: './help.component.html',
-  styleUrls: ['./help.component.css']
+  styleUrls: ['./help.component.css'],
+  animations: [fader]
 })
 export class HelpComponent implements OnInit {
   //TODO this might have to come from server as we grow.. :)

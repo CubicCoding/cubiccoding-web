@@ -8,10 +8,13 @@ import { ScoreTest } from '@app/dashboard/models/score-test';
 
 import { Constants } from '@app/_utils/constants';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-score-test-modal',
   templateUrl: './score-test-modal.component.html',
-  styleUrls: ['./score-test-modal.component.css']
+  styleUrls: ['./score-test-modal.component.css'],
+  animations: [fader]
 })
 export class ScoreTestModalComponent implements OnInit {
   scoreTestForm: FormGroup;

@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ScoreHistoryService } from '@app/dashboard/score-history.service';
 import { MultipleOptionTest } from '@app/dashboard/models/multiple-option-test';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-multiple-option-history',
   templateUrl: './multiple-option-history.component.html',
-  styleUrls: ['./multiple-option-history.component.css']
+  styleUrls: ['./multiple-option-history.component.css'],
+  animations: [fader]
 })
 export class MultipleOptionHistoryComponent implements OnInit {
   multipleOptions: MultipleOptionTest[];

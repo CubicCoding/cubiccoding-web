@@ -1,4 +1,4 @@
-<div *ngIf="multipleOptions && multipleOptions.length > 0">
+<div @fade *ngIf="multipleOptions && multipleOptions.length > 0">
     <div *ngFor="let multipleOption of multipleOptions">
         <div class="row test-header">
             <div class="col-6 text-left">Score: {{multipleOption.maxScore * multipleOption.scoredRatio}}/{{multipleOption.maxScore}}</div>
@@ -13,6 +13,6 @@
         <hr>
     </div>
 </div>
-<div *ngIf="!multipleOptions || multipleOptions.length == 0">
+<div @fade *ngIf="!multipleOptions || multipleOptions.length == 0">
     ¡Vuelve aquí cuando hayas contestado algunas preguntas!
 </div>

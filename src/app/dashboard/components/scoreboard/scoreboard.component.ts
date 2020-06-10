@@ -12,10 +12,13 @@ import { ScoreTestModalComponent } from '@app/dashboard/components/score-test-mo
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from '@app/_utils/constants';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-scoreboard',
   templateUrl: './scoreboard.component.html',
-  styleUrls: ['./scoreboard.component.css']
+  styleUrls: ['./scoreboard.component.css'],
+  animations: [fader]
 })
 export class ScoreboardComponent implements OnInit {
   secondaries: ScoreSecondary[];

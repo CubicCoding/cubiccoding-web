@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ChallengeTest } from '@app/dashboard/models/challenge-test';
 import { ScoreHistoryService } from '@app/dashboard/score-history.service';
 
+import { fader } from '@app/route-animations';
+
 @Component({
   selector: 'app-challenge-history',
   templateUrl: './challenge-history.component.html',
-  styleUrls: ['./challenge-history.component.css']
+  styleUrls: ['./challenge-history.component.css'],
+  animations: [fader]
 })
 export class ChallengeHistoryComponent implements OnInit {
 

@@ -28,7 +28,7 @@
             {{ scoreTestloading ? 'Descargando pregunta..' : 'Descargar' }}</button>
     </div>
 </form>
-<div *ngIf="scoreTest && !userResultsFeedback" class="needs-validation" novalidate>    
+<div @fade *ngIf="scoreTest && !userResultsFeedback" class="needs-validation" novalidate>    
     <div class="modal-header">
         <h5 class="modal-title">Score máximo: <b>{{scoreTest.maxScore}}</b></h5>
         <button type="button" class="close" (click)="closeScoreTestModal()">
@@ -67,7 +67,7 @@
             {{ scoreAnswerloading ? 'Validando respuesta..' : 'Responder' }}</button>
     </div>
 </div>
-<div id="score-test-results" *ngIf="userResultsFeedback">
+<div @fade id="score-test-results" *ngIf="userResultsFeedback">
     <div class="modal-header">
         <h3 class="modal-title" id="scoreResultsTitle">Resultado</h3>
         <button type="button" class="close" (click)="closeScoreTestModal()">
