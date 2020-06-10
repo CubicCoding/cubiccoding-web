@@ -123,8 +123,12 @@ h3, h6 {
         font-size: 1rem;
     }
 
+    .avatar-container {
+        height: 110px;
+    }
+
     .nf-avatar-container {
-        height: 75px;
+        height: 70px;
     }
 
     .btn-primary {
@@ -176,6 +180,18 @@ h3, h6 {
     }
 }
 
+/* If the screen size is 375px height or less and width 800 max */
+@media screen  and (max-height: 375px) and (min-width: 800px) {
+    .avatar-container {
+        height: 215px;
+        width: 150px;
+    }
+
+    .nf-avatar-container {
+        height: 120px;
+    }
+}
+
 /* If the screen size is 350px width or less.. */
 @media screen and (max-width: 350px) {
     .avatar-container {
@@ -194,6 +210,17 @@ h3, h6 {
 
     .nf-avatar-container {
         height: 85px;
+    }
+}
+
+/* If the screen size is 370px width or less and 390px width max */
+@media screen and (min-width: 370px) and (max-width: 390px) {
+    .avatar-container {
+        height: 120px;
+    }
+
+    .nf-avatar-container {
+        height: 70px;
     }
 }
 

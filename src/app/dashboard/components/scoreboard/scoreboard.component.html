@@ -33,7 +33,7 @@
         <ng-template #firstPlaceBlock class="row margin-top-10">
             <div class="col-12 margin-bottom-10">
                 <div class="card">
-                    <div class="card-body" [routerLink]="['/dashboard/scoreboard/history', secondary.email]">
+                    <div class="card-body" [routerLink]="['/scoreboard/history', secondary.email]">
                         <div class="row">
                             <div class="col-12 margin-bottom-10">
                                 <h3 class="mb-0 text-truncated">{{secondary.displayName}}</h3>
@@ -56,7 +56,7 @@
             <hr>
         </ng-template>
         <ng-template #nonFirstPlaceBlock class="row margin-top-10">
-            <div class="col-12 non-first-card" [routerLink]="['/dashboard/scoreboard/history', secondary.email]">
+            <div class="col-12 non-first-card" [routerLink]="['/scoreboard/history', secondary.email]">
                 <div class="row non-first-row">
                     <div class="col-12 nf-current-score">
                         <span>{{secondary.currentScore}}/{{secondary.totalOfferedScore}}</span>

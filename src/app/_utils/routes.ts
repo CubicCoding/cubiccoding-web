@@ -7,9 +7,9 @@ export abstract class CCRoutes {
     static readonly CONTACT = 'contact';
 
     //Dashboard
-    static readonly STUDENT_PROFILE = 'dashboard/student-profile';
-    static readonly SCOREBOARD = 'dashboard/scoreboard';
-    static readonly SCORE_HISTORY = 'dashboard/scoreboard/history/:email';
-    static readonly HELP = 'dashboard/help';
+    static readonly STUDENT_PROFILE = 'student-profile';
+    static readonly SCOREBOARD = 'scoreboard';
+    static readonly SCORE_HISTORY = 'scoreboard/history/:email';
+    static readonly HELP = 'help';
 
 }
