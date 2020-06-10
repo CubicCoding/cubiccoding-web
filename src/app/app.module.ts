@@ -21,6 +21,9 @@ import { ContactComponent } from './auth/components/contact/contact.component';
 import { ScoreboardComponent } from './dashboard/components/scoreboard/scoreboard.component';
 import { RankAvatarComponent } from './dashboard/components/rank-avatar/rank-avatar.component';
 import { ScoreTestModalComponent } from './dashboard/components/score-test-modal/score-test-modal.component';
+import { ScoreHistoryComponent } from './dashboard/components/score-history/score-history.component';
+import { MultipleOptionHistoryComponent } from './dashboard/components/multiple-option-history/multiple-option-history.component';
+import { ChallengeHistoryComponent } from './dashboard/components/challenge-history/challenge-history.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { ScoreTestModalComponent } from './dashboard/components/score-test-modal
     ContactComponent,
     ScoreboardComponent,
     RankAvatarComponent,
-    ScoreTestModalComponent
+    ScoreTestModalComponent,
+    ScoreHistoryComponent,
+    MultipleOptionHistoryComponent,
+    ChallengeHistoryComponent
   ],
   imports: [
     BrowserModule,

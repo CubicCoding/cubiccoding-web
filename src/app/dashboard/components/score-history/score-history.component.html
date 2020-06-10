@@ -1,0 +1,33 @@
+<div *ngIf="loading" class="student-profile-error">
+    <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+    <h5>Cargando información...</h5>
+</div>
+
+<div *ngIf="!loading" class="score-history-container">
+    <div class="row main-header-container">
+        <div class="col-3 user-current-score">
+            Score: <br> {{scoreSecondary.currentScore}}/{{scoreSecondary.totalOfferedScore}}
+        </div>
+        <div class="col-6">
+            <div class="avatar-history-container">
+                <img *ngIf="!scoreSecondary.rank" cc-avatar-preloader="{{scoreSecondary.avatarUrl || defaultUrl}}"
+                    alt="Avatar" class="img-raised rounded-circle img-fluid">
+                <app-rank-avatar *ngIf="scoreSecondary.rank" [rank]="scoreSecondary.rank"
+                    [avatarUrl]="scoreSecondary.avatarUrl">
+                </app-rank-avatar>
+            </div>
+        </div>
+        <div class="col-3 user-current-rank">
+            Rank <br>#{{scoreSecondary.rank}}
+        </div>
+    </div>
+    <nav class="history-nav">
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link" routerLink="multiple-option-tests" routerLinkActive="active">Preguntas</a>
+          <a class="nav-item nav-link" routerLink="challenges" routerLinkActive="active">Retos</a>
+        </div>
+      </nav>
+    <div class="history-outlet">
+        <router-outlet></router-outlet>
+    </div>
+</div>

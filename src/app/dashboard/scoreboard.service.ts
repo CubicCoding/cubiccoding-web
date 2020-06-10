@@ -48,4 +48,9 @@ export class ScoreboardService {
     return this.http.post<any>(`${environment.hostApiUrl}/api/scoreboard/score-answers`, scoreAnswer, { observe: 'response' })
       .pipe(map(response => response.body));
   }
+
+  getScoreHistory(tournamentId: number, email: string) {
+    return this.http.get<any>(`${environment.hostApiUrl}/api/scoreboard/history?tournamentId=${tournamentId}&email=${email}`, { observe: 'response'})
+      .pipe(map(response => response.body));
+  }
 }

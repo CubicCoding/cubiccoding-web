@@ -37,7 +37,7 @@ export class ScoreboardComponent implements OnInit {
   ngOnInit(): void {
     if (!this.secondaries || !this.tournamentInfo) {      
       this.refreshScoreboard();
-    }    
+    }
   }
 
   openScoreTestModal() {
