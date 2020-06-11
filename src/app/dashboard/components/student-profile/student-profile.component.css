@@ -20,7 +20,7 @@
         top: -50px;
         font-size: 2rem;
         font-weight: 600;
-        font-family: cursive;
+        font-family: inherit;
     }
     
     .text-title {
@@ -51,7 +51,7 @@
         top: -30px; 
         font-size: 1rem;
         font-weight: 500;
-        font-family: cursive;
+        font-family: inherit;
     }
     
     .text-title {
@@ -78,7 +78,7 @@
         top: -30px; 
         font-size: 1.2rem;
         font-weight: 600;
-        font-family: cursive;
+        font-family: inherit;
     }
     
     .text-title {
