@@ -12,9 +12,11 @@ import { fader } from '@app/route-animations';
 })
 export class MultipleOptionHistoryComponent implements OnInit {
   multipleOptions: MultipleOptionTest[];
+  loadingScoreHistory: boolean;
 
   constructor(private scoreHistoryService: ScoreHistoryService) {
     scoreHistoryService.multipleOptions$.subscribe(multipleOptions => this.multipleOptions = multipleOptions);
+    scoreHistoryService.isLoadingScoreHistory$.subscribe(isLoadingScoreHistory => this.loadingScoreHistory = isLoadingScoreHistory);
   }
 
   ngOnInit(): void {

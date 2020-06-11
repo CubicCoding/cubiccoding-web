@@ -8,6 +8,7 @@ import { ChallengeTest } from './models/challenge-test';
 })
 export class ScoreHistoryService {
 
+  private loadingScoreHistory: Subject<boolean> = new BehaviorSubject<boolean>(false);
   private multipleOptions: Subject<MultipleOptionTest[]> = new BehaviorSubject<MultipleOptionTest[]>([]);
   private challenges: Subject<ChallengeTest[]> = new BehaviorSubject<ChallengeTest[]>([]);
 
@@ -25,6 +26,14 @@ export class ScoreHistoryService {
 
   addChallenges(data: ChallengeTest[]) {
     this.challenges.next(data);
+  }
+
+  get isLoadingScoreHistory$() {
+    return this.loadingScoreHistory.asObservable();
+  }
+
+  setLoadingScoreHistory(loadingScoreHistory: boolean) {
+    this.loadingScoreHistory.next(loadingScoreHistory);
   }
 
   constructor() { }

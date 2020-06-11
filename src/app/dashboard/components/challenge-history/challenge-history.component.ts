@@ -11,11 +11,12 @@ import { fader } from '@app/route-animations';
   animations: [fader]
 })
 export class ChallengeHistoryComponent implements OnInit {
-
   challenges: ChallengeTest[];
+  loadingScoreHistory: boolean;
 
   constructor(private scoreHistoryService: ScoreHistoryService) { 
     scoreHistoryService.challenges$.subscribe(challenges => this.challenges = challenges);
+    scoreHistoryService.isLoadingScoreHistory$.subscribe(isLoadingScoreHistory => this.loadingScoreHistory = isLoadingScoreHistory);
   }
 
   ngOnInit(): void {

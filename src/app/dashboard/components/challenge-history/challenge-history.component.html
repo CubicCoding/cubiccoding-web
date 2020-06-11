@@ -1,4 +1,8 @@
-<div @fade *ngIf="challenges && challenges.length > 0">
+<div *ngIf="loadingScoreHistory">
+    <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+    <h5>Cargando información...</h5>
+</div>
+<div @fade *ngIf="challenges && challenges.length > 0  && !loadingScoreHistory">
     <div *ngFor="let challenge of challenges">
         <div class="row test-header">
             <div class="col-6 text-left">Score: {{challenge.maxScore * challenge.scoredRatio}}/{{challenge.maxScore}}</div>
@@ -13,6 +17,6 @@
         <hr>
     </div>
 </div>
-<div @fade *ngIf="!challenges || challenges.length == 0">
+<div @fade *ngIf="!challenges || challenges.length == 0  && !loadingScoreHistory">
     ¡Vuelve aquí cuando hayas participado en retos!
 </div>

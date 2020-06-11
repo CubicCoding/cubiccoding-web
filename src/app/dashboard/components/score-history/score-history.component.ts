@@ -58,15 +58,18 @@ export class ScoreHistoryComponent implements OnInit {
   }
 
   private getScoreHistory() {
+    this.scoreHistoryService.setLoadingScoreHistory(true);
     this.scoreboardService.getScoreHistory(this.tournamentInfo.id, this.email)
       .subscribe(
         data => {
+          this.scoreHistoryService.setLoadingScoreHistory(false);
           this.loading = false;
           this.scoreHistoryService.addMultipleOptions(data.multipleOptions);
           this.scoreHistoryService.addChallenges(data.challenges);
         },
         error => {
           this.loading = false;
+          this.scoreHistoryService.setLoadingScoreHistory(false);
         });
   }
 

@@ -1,4 +1,8 @@
-<div @fade *ngIf="multipleOptions && multipleOptions.length > 0">
+<div *ngIf="loadingScoreHistory">
+    <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+    <h5>Cargando información...</h5>
+</div>
+<div @fade *ngIf="multipleOptions && multipleOptions.length > 0 && !loadingScoreHistory">
     <div *ngFor="let multipleOption of multipleOptions">
         <div class="row test-header">
             <div class="col-6 text-left">Score: {{multipleOption.maxScore * multipleOption.scoredRatio}}/{{multipleOption.maxScore}}</div>
@@ -13,6 +17,6 @@
         <hr>
     </div>
 </div>
-<div @fade *ngIf="!multipleOptions || multipleOptions.length == 0">
+<div @fade *ngIf="!multipleOptions || multipleOptions.length == 0 && !loadingScoreHistory">
     ¡Vuelve aquí cuando hayas contestado algunas preguntas!
 </div>
