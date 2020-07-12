@@ -26,6 +26,7 @@ import { MultipleOptionHistoryComponent } from './dashboard/components/multiple-
 import { ChallengeHistoryComponent } from './dashboard/components/challenge-history/challenge-history.component';
 import { HelpComponent } from './dashboard/components/help/help.component';
 import { StaffProfileCardComponent } from './dashboard/components/staff-profile-card/staff-profile-card.component';
+import { TimelineComponent } from './dashboard/components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { StaffProfileCardComponent } from './dashboard/components/staff-profile-
     MultipleOptionHistoryComponent,
     ChallengeHistoryComponent,
     HelpComponent,
-    StaffProfileCardComponent
+    StaffProfileCardComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

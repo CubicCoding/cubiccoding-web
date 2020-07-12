@@ -16,6 +16,7 @@ import { ScoreHistoryComponent } from './dashboard/components/score-history/scor
 import { MultipleOptionHistoryComponent } from './dashboard/components/multiple-option-history/multiple-option-history.component';
 import { ChallengeHistoryComponent } from './dashboard/components/challenge-history/challenge-history.component';
 import { HelpComponent } from './dashboard/components/help/help.component';
+import { TimelineComponent } from './dashboard/components/timeline/timeline.component';
 
 const routes: Routes = [
   {path: '', redirectTo: CCRoutes.STUDENT_PROFILE, pathMatch: 'full'},
@@ -41,6 +42,7 @@ const routes: Routes = [
         component: ChallengeHistoryComponent
       }
     ]},
+  {path: CCRoutes.TIMELINE, component: TimelineComponent, canActivate: [AuthGuard]},
   {path: CCRoutes.HELP, component: HelpComponent},
 
   { path: '**', redirectTo: CCRoutes.SIGN_IN }

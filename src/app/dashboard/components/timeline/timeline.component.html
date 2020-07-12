@@ -1,0 +1,47 @@
+<div class="row timeline-error">
+  <div *ngIf="loading">
+    <span *ngIf="loading" class="spinner-border spinner-border-lg" role="status" aria-hidden="true"></span>
+    <h5>Cargando información...</h5>
+  </div>
+  <div *ngIf="error">
+    <div class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+  </div>
+</div>
+<div *ngIf="!loading && !error">
+  <div class="container">
+    <h3 >SOFTWARE DEVELOPER</h3>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0"
+        aria-valuemax="100%" [style.width]="progressPercent + '%'"></div>
+    </div>
+    <h3>{{timelineProgress + 1}} / {{topics.length}} LEVEL UP</h3>
+
+    <ul class="timeline">
+      <li *ngFor="let topic of topics; index as idx" [ngClass]="{'timeline-inverted': (idx % 2 == 1)}" id="{{idx}}">
+        <div id="pentagon"
+          [ngStyle]="{'background-color': topic.color, 'opacity': timelineProgress >= (idx) ? '100%' : '50%'}">
+          <span id="timeline-progress-number">{{idx + 1}}</span>
+        </div>
+        <span class="checkmark" *ngIf="timelineProgress > (idx)">
+          <div class="checkmark_circle"></div>
+          <div class="checkmark_stem"></div>
+          <div class="checkmark_kick"></div>
+        </span>
+        <div class="timeline-panel" [ngStyle]="{'opacity': timelineProgress >= (idx) ? '100%' : '50%'}">
+          <div class="timeline-heading">
+            <h4 class="timeline-title" [ngStyle]="{'color': topic.color}">{{topic.name}}</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{topic.description}}</small></p>
+            <h5 [ngStyle]="{'color': topic.color}">Temas:</h5>
+          </div>
+          <div class="timeline-body">
+            <ul class="list-group">
+              <li *ngFor="let subtopic of topic.topics" class="list-group-item">{{subtopic}}</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

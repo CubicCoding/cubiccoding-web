@@ -10,6 +10,7 @@ export abstract class CCRoutes {
     static readonly STUDENT_PROFILE = 'student-profile';
     static readonly SCOREBOARD = 'scoreboard';
     static readonly SCORE_HISTORY = 'scoreboard/history/:email';
+    static readonly TIMELINE = 'timeline';
     static readonly HELP = 'help';
 
 }
