@@ -39,10 +39,10 @@
                                 <h3 class="mb-0 text-truncated">{{secondary.displayName}}</h3>
                                 <h6 class="mb-0 text-truncated">Software Developer</h6>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6" id="primary-score-container">
                                 <span class="score-span">Score:</span><br>
                                 <span
-                                    class="f-score-value">{{secondary.currentScore}}/{{secondary.totalOfferedScore}}</span><br>
+                                    class="f-score-value">{{roundScore(secondary.currentScore)}}/{{secondary.totalOfferedScore}}</span><br>
                                 <img src="assets/icons/cc-wing-shield.png" alt="Avatar" class="img-fluid">
                             </div>
                             <div class="col-6 avatar-container">
@@ -59,7 +59,7 @@
             <div class="col-12 non-first-card" [routerLink]="['/scoreboard/history', secondary.email]">
                 <div class="row non-first-row">
                     <div class="col-12 nf-current-score">
-                        <span>{{secondary.currentScore}}/{{secondary.totalOfferedScore}}</span>
+                        <span>{{roundScore(secondary.currentScore)}}/{{secondary.totalOfferedScore}}</span>
                     </div>
                     <div class="col-2 nf-rank-container"
                         [ngStyle]="{'background-image': 'url(' + nonFirstPlaceIconUrl + ')'}">

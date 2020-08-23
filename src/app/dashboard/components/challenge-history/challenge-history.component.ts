@@ -3,6 +3,7 @@ import { ChallengeTest } from '@app/dashboard/models/challenge-test';
 import { ScoreHistoryService } from '@app/dashboard/score-history.service';
 
 import { fader } from '@app/route-animations';
+import { ScoreboardService } from '@app/dashboard/scoreboard.service';
 
 @Component({
   selector: 'app-challenge-history',
@@ -14,7 +15,7 @@ export class ChallengeHistoryComponent implements OnInit {
   challenges: ChallengeTest[];
   loadingScoreHistory: boolean;
 
-  constructor(private scoreHistoryService: ScoreHistoryService) { 
+  constructor(private scoreHistoryService: ScoreHistoryService, private scoreboardService: ScoreboardService) { 
     scoreHistoryService.challenges$.subscribe(challenges => this.challenges = challenges);
     scoreHistoryService.isLoadingScoreHistory$.subscribe(isLoadingScoreHistory => this.loadingScoreHistory = isLoadingScoreHistory);
   }
@@ -29,5 +30,10 @@ export class ChallengeHistoryComponent implements OnInit {
         return 'partial-score-obtained';
       }
       return 'zero-score-obtained';
+  }
+
+  calculateScore(maxScore: number, scoredRatio: number) {
+    let unroundedScore = maxScore * scoredRatio;
+    return this.scoreboardService.roundScore(unroundedScore);
   }
 }

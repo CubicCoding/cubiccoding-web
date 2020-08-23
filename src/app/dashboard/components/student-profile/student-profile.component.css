@@ -11,7 +11,7 @@
     }
 
     .main {
-        margin-top: 15vh;
+        margin-top: 20vh;
     }
 
     .value-title {
@@ -21,6 +21,7 @@
         font-size: 2rem;
         font-weight: 600;
         font-family: inherit;
+        max-width: 200px;
     }
     
     .text-title {
@@ -153,6 +154,11 @@
 
 .img-fluid {
     max-height: 250px;
+}
+
+.img-fluid-avatar {
+    width: 100%; 
+    height: 100%;
 }
 
 .student-info {

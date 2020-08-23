@@ -3,6 +3,7 @@ import { ScoreHistoryService } from '@app/dashboard/score-history.service';
 import { MultipleOptionTest } from '@app/dashboard/models/multiple-option-test';
 
 import { fader } from '@app/route-animations';
+import { ScoreboardService } from '@app/dashboard/scoreboard.service';
 
 @Component({
   selector: 'app-multiple-option-history',
@@ -10,16 +11,13 @@ import { fader } from '@app/route-animations';
   styleUrls: ['./multiple-option-history.component.css'],
   animations: [fader]
 })
-export class MultipleOptionHistoryComponent implements OnInit {
+export class MultipleOptionHistoryComponent {
   multipleOptions: MultipleOptionTest[];
   loadingScoreHistory: boolean;
 
-  constructor(private scoreHistoryService: ScoreHistoryService) {
+  constructor(private scoreHistoryService: ScoreHistoryService, private scoreboardService: ScoreboardService) {
     scoreHistoryService.multipleOptions$.subscribe(multipleOptions => this.multipleOptions = multipleOptions);
     scoreHistoryService.isLoadingScoreHistory$.subscribe(isLoadingScoreHistory => this.loadingScoreHistory = isLoadingScoreHistory);
-  }
-
-  ngOnInit(): void {
   }
 
   calculateAnswerColor(optionIndex: number, userAnswers: number[], rightAnswers: number[]) : string {
@@ -33,5 +31,10 @@ export class MultipleOptionHistoryComponent implements OnInit {
       }
       return 'score-default';
     }
+  }
+
+calculateScore(maxScore: number, scoredRatio: number) {
+    let unroundedScore = maxScore * scoredRatio;
+    return this.scoreboardService.roundScore(unroundedScore);
   }
 }

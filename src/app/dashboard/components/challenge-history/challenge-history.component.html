@@ -5,7 +5,7 @@
 <div @fade *ngIf="challenges && challenges.length > 0  && !loadingScoreHistory">
     <div *ngFor="let challenge of challenges">
         <div class="row test-header">
-            <div class="col-6 text-left">Score: {{challenge.maxScore * challenge.scoredRatio}}/{{challenge.maxScore}}</div>
+            <div class="col-6 text-left">Score: {{calculateScore(challenge.maxScore, challenge.scoredRatio)}}/{{challenge.maxScore}}</div>
             <div class="col-6 text-right">{{challenge.createdDate | date:'short'}}</div>
         </div>
         <div class="col-12 question-title">{{challenge.questionTitle}}</div>
@@ -18,5 +18,5 @@
     </div>
 </div>
 <div @fade *ngIf="!challenges || challenges.length == 0  && !loadingScoreHistory">
-    ¡Vuelve aquí cuando hayas participado en retos!
+    ¡Este usuario aún no ha participado en retos!
 </div>

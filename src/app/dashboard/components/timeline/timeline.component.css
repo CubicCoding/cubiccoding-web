@@ -12,11 +12,12 @@ h3 {
     color: white;
 }
 
+#timeline-spacer-div {
+    height: 10px;
+}
+
 #timeline-progress-number {
-    top: 15px;
-    position: absolute;
-    right: 27px;
-    font-size: larger;
+    font-size: x-large;
 }
 
 .timeline-error {

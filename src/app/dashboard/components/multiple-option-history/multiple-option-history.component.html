@@ -5,8 +5,8 @@
 <div @fade *ngIf="multipleOptions && multipleOptions.length > 0 && !loadingScoreHistory">
     <div *ngFor="let multipleOption of multipleOptions">
         <div class="row test-header">
-            <div class="col-6 text-left">Score: {{multipleOption.maxScore * multipleOption.scoredRatio}}/{{multipleOption.maxScore}}</div>
-            <div class="col-6 text-right">{{multipleOption.createdDate | date:'short'}}</div>
+            <div class="col-6 text-left">Score: {{calculateScore(multipleOption.maxScore, multipleOption.scoredRatio)}}/{{multipleOption.maxScore}}</div>
+            <div class="col-6 text-right">{{multipleOption.createdDate | date:'short':'UTC-6'}}</div>
         </div>
         <div class="col-12 question-title">{{multipleOption.questionTitle}}</div>
         <div class="auto-margin">
@@ -18,5 +18,5 @@
     </div>
 </div>
 <div @fade *ngIf="!multipleOptions || multipleOptions.length == 0 && !loadingScoreHistory">
-    ¡Vuelve aquí cuando hayas contestado algunas preguntas!
+    ¡Este usuario aún no ha contestado preguntas!
 </div>

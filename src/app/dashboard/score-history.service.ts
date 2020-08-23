@@ -12,20 +12,35 @@ export class ScoreHistoryService {
   private multipleOptions: Subject<MultipleOptionTest[]> = new BehaviorSubject<MultipleOptionTest[]>([]);
   private challenges: Subject<ChallengeTest[]> = new BehaviorSubject<ChallengeTest[]>([]);
 
+  constructor() { }
+
   get multipleOptions$() {
     return this.multipleOptions.asObservable();
   }
 
   addMultipleOptions(data: MultipleOptionTest[]) {
+    for(let multipleOptionTest of data) {
+      multipleOptionTest.createdDate = this.fromUTCtoLocalDate(multipleOptionTest.createdDate);
+    }
+
     this.multipleOptions.next(data);
+  }
+
+  addChallenges(data: ChallengeTest[]) {
+    for(let challenge of data) {
+      challenge.createdDate = this.fromUTCtoLocalDate(challenge.createdDate);
+    }
+
+    this.challenges.next(data);
+  }
+
+  private fromUTCtoLocalDate(createdDate: Date) {
+    createdDate = new Date(createdDate.toString());
+    return new Date(createdDate + ' UTC');
   }
 
   get challenges$() {
     return this.challenges.asObservable();
-  }
-
-  addChallenges(data: ChallengeTest[]) {
-    this.challenges.next(data);
   }
 
   get isLoadingScoreHistory$() {
@@ -35,6 +50,4 @@ export class ScoreHistoryService {
   setLoadingScoreHistory(loadingScoreHistory: boolean) {
     this.loadingScoreHistory.next(loadingScoreHistory);
   }
-
-  constructor() { }
 }

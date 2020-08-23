@@ -22,6 +22,7 @@
       <li *ngFor="let topic of topics; index as idx" [ngClass]="{'timeline-inverted': (idx % 2 == 1)}" id="{{idx}}">
         <div id="pentagon"
           [ngStyle]="{'background-color': topic.color, 'opacity': timelineProgress >= (idx) ? '100%' : '50%'}">
+          <div id="timeline-spacer-div"></div>
           <span id="timeline-progress-number">{{idx + 1}}</span>
         </div>
         <span class="checkmark" *ngIf="timelineProgress > (idx)">

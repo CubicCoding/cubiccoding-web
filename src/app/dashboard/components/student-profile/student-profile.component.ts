@@ -27,9 +27,11 @@ export class StudentProfileComponent implements OnInit {
     private scoreboardservice: ScoreboardService) {
     this.authService.userProfile.subscribe(userProfile => this.userProfile = userProfile);
     this.scoreboardservice.scoreboardInfo.subscribe(scoreboardInfo => {
-      this.primary = scoreboardInfo != null ? scoreboardInfo.primary : null;
-      this.primary.username = this.userProfile.username;
-      this.primary.classroomName = scoreboardInfo.tournamentInfo.classroomName;
+      if(scoreboardInfo.primary != null) {
+        this.primary = scoreboardInfo.primary;
+        this.primary.username = this.userProfile.username;
+        this.primary.classroomName = scoreboardInfo.tournamentInfo.classroomName;
+      }
     });
   }
 

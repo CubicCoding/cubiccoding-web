@@ -25,7 +25,7 @@
             <div class="profile">
               <div class="avatar-profile-container">
                 <img *ngIf="!primary.rank" cc-avatar-preloader="{{userProfile.avatarUrl || defaultUrl}}"
-                  alt="Avatar" class="img-raised rounded-circle img-fluid">
+                  alt="Avatar" class="img-raised rounded-circle img-fluid-avatar">
                 <app-rank-avatar *ngIf="primary.rank" [rank]="primary.rank" [avatarUrl]="primary.avatarUrl">
                 </app-rank-avatar>
               </div>

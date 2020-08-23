@@ -82,6 +82,10 @@ export class ScoreboardComponent implements OnInit {
           });
   }
 
+  roundScore(score: number) {
+    return this.scoreboardService.roundScore(score);
+  }
+
   private handleError(statusCode: number) {
     if (statusCode == 0) {
       this.error = "No fue posible obtener el scoreboard en este momento, vuelve a intentarlo mas tarde.";

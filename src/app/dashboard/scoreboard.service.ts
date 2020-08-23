@@ -26,9 +26,25 @@ export class ScoreboardService {
     return this.http.get<ScoreboardInfo>(`${environment.hostApiUrl}/api/scoreboard?classroomName=${classroomName}&email=${email}`, { observe: 'response' })
       .pipe(map(response => {
         let scoreboardInfo = response.body;
+        this.roundAllScores(scoreboardInfo);
+
         this.scoreboardSubject.next(scoreboardInfo);
         return scoreboardInfo;
       }));
+  }
+
+  private roundAllScores(scoreboardInfo: any) {
+    if(scoreboardInfo.primary != null && scoreboardInfo.secondaries != null && scoreboardInfo.secondaries.length > 0) {
+      scoreboardInfo.primary.currentScore = this.roundScore(scoreboardInfo.primary.currentScore);
+
+      for(let secondary of scoreboardInfo.secondaries) {
+        secondary.currentScore = this.roundScore(secondary.currentScore);
+      }
+    }
+  }
+
+  roundScore(score: number) {
+    return Math.round((score + Number.EPSILON) * 100) / 100;
   }
 
   getScoreTest(scoreTestUuid) {

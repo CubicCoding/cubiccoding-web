@@ -60,7 +60,7 @@ h3, h6 {
     }
 
     .f-score-value {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .avatar-container {
@@ -235,4 +235,10 @@ h3, h6 {
 
 .f-score-value {
     color: #7ecefd;
+}
+
+#primary-score-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
