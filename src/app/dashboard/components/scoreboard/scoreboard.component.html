@@ -11,9 +11,8 @@
 </div>
 <div *ngIf="!secondaries && !loading && !error" class="scoreboard-no-info">
     <h2>¡Bienvenido al scoreboard, {{userProfile.name}}!</h2>
-    <h4>Aquí podrás encontrar información como ranking de tu grupo, preguntas y retos que has contestado a lo largo de
-        tu carrera como CubicCoder.</h4>
-    <h5>Muy pronto tu instructor iniciara torneos en los que podrás participar, ¡vuelve pronto!</h5>
+    <h4>Por el momento no hay torneos activos.</h4>
+    <h5>Muy pronto tu instructor iniciará alguno en el que podrás competir, ¡vuelve pronto!</h5>
 </div>
 <div @fade *ngIf="secondaries" class="secondaries-container">
     <div class="row">

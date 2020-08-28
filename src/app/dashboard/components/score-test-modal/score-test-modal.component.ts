@@ -190,6 +190,9 @@ export class ScoreTestModalComponent implements OnInit {
         this.scoreAnswerError = "Debes seleccionar al menos una respuesta.";
         break;
       }
+      default: {
+        this.scoreAnswerError = "¡Oops! Algo salió mal mientras intentamos mandar tu respuesta.";
+      }
     }
   }
 }

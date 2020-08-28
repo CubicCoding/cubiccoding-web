@@ -45,7 +45,7 @@ export class StudentProfileComponent implements OnInit {
             this.loading = false;
             if(data.primary != null) {
               this.primary =  data.primary;
-              this.primary.username = this.userProfile.username;
+              this.setPrimaryProperties();
             } else {
               this.setDefaultPrimaryProperties();
             }
@@ -55,6 +55,12 @@ export class StudentProfileComponent implements OnInit {
             this.handleError(error.status);
           });
     }
+  }
+
+  private setPrimaryProperties() {
+    this.primary.username = this.userProfile.username;
+    this.primary.startDate = this.fromUTCtoLocalDate(this.primary.startDate);
+    this.primary.courseName = CourseName[this.userProfile.courseName];
   }
 
   private handleError(statusCode: number) {
@@ -69,17 +75,37 @@ export class StudentProfileComponent implements OnInit {
     this.primary = new ScorePrimary();
     this.primary.courseName = CourseName[this.userProfile.courseName];
     this.primary.displayName = this.userProfile.name + ' ' + this.userProfile.firstSurname;
-    this.primary.startDate = this.parseAndGetDate(this.userProfile.createDate.date);
+    this.primary.startDate = this.parseAndGetDate(this.userProfile.createDate);
     this.primary.email = this.userProfile.email;
     this.primary.username = this.userProfile.username;
   }
 
   private parseAndGetDate(dateObject: any): Date {
-    let day = dateObject.day.toString();
-    let month = dateObject.month.toString();
-    let year = dateObject.year.toString();
-    let dateStr = year + '-' + month + '-' + day;
+    let date = this.getDateFromObject(dateObject.date);
+    let time = this.getTimeFromObject(dateObject.time);
 
-    return new Date(dateStr);
+    let startDate = new Date(date + ' ' + time); 
+    return new Date(startDate + ' UTC');
+  }
+
+  private getDateFromObject(date: any) {
+    let day = date.day.toString();
+    let month = date.month.toString();
+    let year = date.year.toString();
+
+    return year + '-' + month + '-' + day;
+  }
+
+  private getTimeFromObject(time: any) {
+    let hour = time.hour.toString();
+    let minute = time.minute.toString();
+    let second = time.second.toString();
+
+    return hour + ':' + minute + ':' + second;
+  }
+
+  private fromUTCtoLocalDate(createdDate: Date) {
+    createdDate = new Date(createdDate.toString());
+    return new Date(createdDate + ' UTC');
   }
 }
