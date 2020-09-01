@@ -6,7 +6,7 @@
     <div *ngFor="let challenge of challenges">
         <div class="row test-header">
             <div class="col-6 text-left">Score: {{calculateScore(challenge.maxScore, challenge.scoredRatio)}}/{{challenge.maxScore}}</div>
-            <div class="col-6 text-right">{{challenge.createdDate | date:'short'}}</div>
+            <div class="col-6 text-right">{{challenge.createdDate | date:'dd/MM/yyyy hh:mm'}}</div>
         </div>
         <div class="col-12 question-title">{{challenge.questionTitle}}</div>
         <div class="auto-margin">

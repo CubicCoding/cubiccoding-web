@@ -6,7 +6,7 @@
     <div *ngFor="let multipleOption of multipleOptions">
         <div class="row test-header">
             <div class="col-6 text-left">Score: {{calculateScore(multipleOption.maxScore, multipleOption.scoredRatio)}}/{{multipleOption.maxScore}}</div>
-            <div class="col-6 text-right">{{multipleOption.createdDate | date:'short'}}</div>
+            <div class="col-6 text-right">{{multipleOption.createdDate | date:'dd/MM/yyyy hh:mm'}}</div>
         </div>
         <div class="col-12 question-title">{{multipleOption.questionTitle}}</div>
         <div class="auto-margin">

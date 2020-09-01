@@ -73,6 +73,7 @@ export class StudentProfileComponent implements OnInit {
 
   private setDefaultPrimaryProperties() {
     this.primary = new ScorePrimary();
+    this.primary.classroomName = this.userProfile.classroomName;
     this.primary.courseName = CourseName[this.userProfile.courseName];
     this.primary.displayName = this.userProfile.name + ' ' + this.userProfile.firstSurname;
     this.primary.startDate = this.parseAndGetDate(this.userProfile.createDate);
