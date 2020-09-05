@@ -81,12 +81,13 @@ export class StudentProfileComponent implements OnInit {
     this.primary.username = this.userProfile.username;
   }
 
-  private parseAndGetDate(dateObject: any): Date {
+  private parseAndGetDate(dateObject: any): any {
     let date = this.getDateFromObject(dateObject.date);
     let time = this.getTimeFromObject(dateObject.time);
 
-    let startDate = new Date(date + ' ' + time); 
-    return new Date(startDate + ' UTC');
+    let startDate = new Date(date + ' ' + time + ' UTC');
+
+    return startDate.getDate() + '/' + (startDate.getMonth() + 1) + '/' + startDate.getFullYear();
   }
 
   private getDateFromObject(date: any) {
@@ -94,7 +95,7 @@ export class StudentProfileComponent implements OnInit {
     let month = date.month.toString();
     let year = date.year.toString();
 
-    return year + '-' + month + '-' + day;
+    return year + '/' + month + '/' + day;
   }
 
   private getTimeFromObject(time: any) {
@@ -106,7 +107,7 @@ export class StudentProfileComponent implements OnInit {
   }
 
   private fromUTCtoLocalDate(createdDate: Date) {
-    createdDate = new Date(createdDate.toString());
-    return new Date(createdDate + ' UTC');
+    createdDate = new Date(createdDate.toString() + ' UTC');
+    return createdDate.getDate() + '/' + (createdDate.getMonth() + 1) + '/' + createdDate.getFullYear();
   }
 }
