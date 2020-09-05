@@ -107,7 +107,8 @@ export class StudentProfileComponent implements OnInit {
   }
 
   private fromUTCtoLocalDate(createdDate: Date) {
-    createdDate = new Date(createdDate.toString() + ' UTC');
+    createdDate = new Date(createdDate.toString());
+    createdDate = new Date(createdDate + ' UTC');
     return createdDate.getDate() + '/' + (createdDate.getMonth() + 1) + '/' + createdDate.getFullYear();
   }
 }
