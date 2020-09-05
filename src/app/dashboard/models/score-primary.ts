@@ -7,7 +7,7 @@ export class ScorePrimary {
     courseName: string;
     avatarUrl: string;
     instructorName: string;
-    startDate: Date;
+    startDate: any;
     username: string;
     classroomName: string;
 }
