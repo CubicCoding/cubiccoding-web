@@ -6,8 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { MomentModule } from 'ngx-moment';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './auth/components/sign-in/sign-in.component';
@@ -56,8 +54,7 @@ import { TimelineComponent } from './dashboard/components/timeline/timeline.comp
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
-    ToastrModule.forRoot(),
-    MomentModule
+    ToastrModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
