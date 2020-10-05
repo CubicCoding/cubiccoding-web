@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators, Form } from '@angular/forms';
@@ -29,13 +29,18 @@ export class ScoreTestModalComponent implements OnInit {
   userResultsFeedback: string;
   alertClass: string;
   canTestBeAnsweredByUser: boolean;
+  @Input() public urlScoreTestUuid: string;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, private scoreboardService: ScoreboardService) { }
 
   ngOnInit(): void {
     this.scoreTestForm = this.formBuilder.group({
       scoreTestUuid: ['', [Validators.required, Validators.minLength(5)]]
-    });    
+    });
+
+    if(this.urlScoreTestUuid) {
+      this.scoreTestForm.controls[Constants.SCORE_TEST_UUID].setValue(this.urlScoreTestUuid);
+    }
   }
 
   closeScoreTestModal() {

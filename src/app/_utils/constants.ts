@@ -5,4 +5,6 @@ export abstract class Constants {
     static readonly SCORE_TEST_FINISHED = "FINISHED";
     static readonly SCORE_TEST_IN_PROGRESS = "IN_PROGRESS";
     static readonly SCORE_TEST_GRACEFULLY_CLOSED = "GRACEFULLY_CLOSED";
+
+    static readonly SCORE_TEST_UUID = "scoreTestUuid";
 }

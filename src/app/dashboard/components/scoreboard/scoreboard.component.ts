@@ -14,6 +14,8 @@ import { Constants } from '@app/_utils/constants';
 
 import { fader } from '@app/route-animations';
 
+import { ActivatedRoute } from "@angular/router";
+
 @Component({
   selector: 'app-scoreboard',
   templateUrl: './scoreboard.component.html',
@@ -27,9 +29,10 @@ export class ScoreboardComponent implements OnInit {
   loading: boolean = false;
   error: string;
   nonFirstPlaceIconUrl: string = "assets/icons/cc-inverted-pentagon-blue.png";
+  urlScoreTestUuid: string;
 
   constructor(private scoreboardService: ScoreboardService, private authService: AuthService, 
-    private modalService: NgbModal, private toastr: ToastrService) {
+    private modalService: NgbModal, private toastr: ToastrService, private route: ActivatedRoute) {
     this.authService.userProfile.subscribe(userProfile => this.userProfile = userProfile);
     this.scoreboardService.scoreboardInfo.subscribe(scoreboardInfo => {
       this.secondaries = scoreboardInfo.secondaries;
@@ -38,9 +41,22 @@ export class ScoreboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.secondaries || !this.tournamentInfo) {      
+    this.checkForScoreTestUuidInUrl();
+
+    if (!this.secondaries || !this.tournamentInfo) {
       this.refreshScoreboard();
     }
+  }
+
+  checkForScoreTestUuidInUrl() {
+    this.route.queryParams.subscribe(params => {
+      const scoreTestUuid = params[Constants.SCORE_TEST_UUID];
+
+      if(scoreTestUuid) {
+        this.urlScoreTestUuid = scoreTestUuid;
+        this.openScoreTestModal();
+      }
+    });  
   }
 
   openScoreTestModal() {
@@ -51,6 +67,7 @@ export class ScoreboardComponent implements OnInit {
     };
 
     const scoreTestModalRef = this.modalService.open(ScoreTestModalComponent, options);
+    scoreTestModalRef.componentInstance.urlScoreTestUuid = this.urlScoreTestUuid;
     
     scoreTestModalRef.result
     .then((result) => {
